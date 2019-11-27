@@ -3,26 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/post/first/</loc>
+    <loc>https://adsdingsu.com/</loc>
+    <lastmod>2019-11-27T22:43:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/post/</loc>
+    <lastmod>2019-11-27T22:43:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/post/second/</loc>
+    <lastmod>2019-11-27T22:43:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/post/first/</loc>
     <lastmod>2019-11-27T21:11:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
-    <lastmod>2019-11-27T21:11:04+08:00</lastmod>
+    <loc>https://adsdingsu.com/categories/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/post/</loc>
-    <lastmod>2019-11-27T21:11:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://adsdingsu.com/tags/</loc>
   </url>
   
 </urlset>

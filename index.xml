@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://example.org/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>Dingsu&#39;s Blog</title>
+    <link>https://adsdingsu.com/</link>
+    <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2019 21:11:04 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2019 22:43:39 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Second</title>
+      <link>https://adsdingsu.com/post/second/</link>
+      <pubDate>Wed, 27 Nov 2019 22:43:39 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/post/second/</guid>
+      <description>This is my second artical testing</description>
+    </item>
+    
+    <item>
       <title>First</title>
-      <link>http://example.org/post/first/</link>
+      <link>https://adsdingsu.com/post/first/</link>
       <pubDate>Wed, 27 Nov 2019 21:11:04 +0800</pubDate>
       
-      <guid>http://example.org/post/first/</guid>
+      <guid>https://adsdingsu.com/post/first/</guid>
       <description></description>
     </item>
     
