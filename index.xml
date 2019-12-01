@@ -6,9 +6,28 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 27 Nov 2019 22:43:39 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Second</title>
+      <link>https://adsdingsu.com/blog/second/</link>
+      <pubDate>Wed, 27 Nov 2019 22:43:39 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/second/</guid>
+      <description>This is my second artical testing</description>
+    </item>
+    
+    <item>
+      <title>First</title>
+      <link>https://adsdingsu.com/blog/first/</link>
+      <pubDate>Wed, 27 Nov 2019 21:11:04 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/first/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

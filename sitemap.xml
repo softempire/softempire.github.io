@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	
-	<sitemap>
-	   	<loc>https://adsdingsu.com/en/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://adsdingsu.com/cn/sitemap.xml</loc>
-		
-	</sitemap>
-	
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://adsdingsu.com/</loc>
+    <lastmod>2019-11-27T22:43:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/post/</loc>
+    <lastmod>2019-11-27T22:43:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/blog/second/</loc>
+    <lastmod>2019-11-27T22:43:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/blog/first/</loc>
+    <lastmod>2019-11-27T21:11:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/tags/</loc>
+  </url>
+  
+</urlset>
