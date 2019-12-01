@@ -6,27 +6,93 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2019 22:43:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Dec 2019 22:27:06 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Second</title>
-      <link>https://adsdingsu.com/blog/second/</link>
-      <pubDate>Wed, 27 Nov 2019 22:43:39 +0800</pubDate>
+      <title>QT</title>
+      <link>https://adsdingsu.com/blog/qt/</link>
+      <pubDate>Tue, 03 Dec 2019 22:27:06 +0800</pubDate>
       
-      <guid>https://adsdingsu.com/blog/second/</guid>
-      <description>This is my second artical testing</description>
+      <guid>https://adsdingsu.com/blog/qt/</guid>
+      <description>QT非常好</description>
     </item>
     
     <item>
-      <title>First</title>
-      <link>https://adsdingsu.com/blog/first/</link>
-      <pubDate>Wed, 27 Nov 2019 21:11:04 +0800</pubDate>
+      <title>ClipX</title>
+      <link>https://adsdingsu.com/blog/clipx/</link>
+      <pubDate>Tue, 03 Dec 2019 22:24:47 +0800</pubDate>
       
-      <guid>https://adsdingsu.com/blog/first/</guid>
+      <guid>https://adsdingsu.com/blog/clipx/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Mailbird</title>
+      <link>https://adsdingsu.com/blog/mailbird/</link>
+      <pubDate>Tue, 03 Dec 2019 22:05:50 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/mailbird/</guid>
+      <description>我找到的唯一可以使用Gmail快捷键的客户端</description>
+    </item>
+    
+    <item>
+      <title>Cmder</title>
+      <link>https://adsdingsu.com/blog/cmder/</link>
+      <pubDate>Tue, 03 Dec 2019 07:20:43 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/cmder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Z</title>
+      <link>https://adsdingsu.com/blog/z/</link>
+      <pubDate>Tue, 03 Dec 2019 07:16:57 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/z/</guid>
+      <description>Z jump</description>
+    </item>
+    
+    <item>
+      <title>Listary</title>
+      <link>https://adsdingsu.com/blog/listary/</link>
+      <pubDate>Tue, 03 Dec 2019 07:15:45 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/listary/</guid>
+      <description>效率工具</description>
+    </item>
+    
+    <item>
+      <title>Hub</title>
+      <link>https://adsdingsu.com/blog/hub/</link>
+      <pubDate>Mon, 02 Dec 2019 22:37:33 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/hub/</guid>
+      <description>Hub真是一个很好的软件，后面加介绍 </description>
+    </item>
+    
+    <item>
+      <title>Sharex</title>
+      <link>https://adsdingsu.com/blog/sharex/</link>
+      <pubDate>Mon, 02 Dec 2019 00:17:57 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/sharex/</guid>
+      <description>首先要介绍一下Blog过程中经常会用到的截图工具</description>
+    </item>
+    
+    <item>
+      <title>我的博客</title>
+      <link>https://adsdingsu.com/blog/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sun, 01 Dec 2019 23:51:59 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
+      <description>一直想有一个自己的博客，一直因为种种麻烦没去弄（其实并不麻烦）。终于下定决心放在github上面，并不需要有什么人来看，只是想记录一下自己的生活。Github短期内应该不会垮掉吧。。。
+接下来，看看能不能坚持下来，每周至少有一篇的更新，不管什么内容，总要坚持更新。
+我能想到的一些内容：
+ C++ C# AutoCAD Civil3D BIM 键盘 显示器 iPhone 生产力软件   </description>
     </item>
     
   </channel>
