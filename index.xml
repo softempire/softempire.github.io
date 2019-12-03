@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Dec 2019 22:27:06 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Dec 2019 22:29:26 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OSG</title>
+      <link>https://adsdingsu.com/blog/osg/</link>
+      <pubDate>Tue, 03 Dec 2019 22:29:26 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/osg/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>QT</title>
