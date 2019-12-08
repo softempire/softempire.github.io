@@ -121,7 +121,17 @@
       <pubDate>Mon, 02 Dec 2019 00:17:57 +0800</pubDate>
       
       <guid>https://adsdingsu.com/blog/sharex/</guid>
-      <description>首先要介绍一下Blog过程中经常会用到的截图工具</description>
+      <description>首先要介绍一下Blog过程中经常会用到的截图工具。除了Blog，我在邮件和Jira中也经常的用到截图功能。一个第三方的截图工具是非常的必要的。我看过最特别的截图过程是，先PrintScreen，然后启动MSPaint，然后paste，然后挖一块出来，工作效率可想而知。我看到的另一个奇葩的用法是，为了这个截图功能，就在公司电脑装上QQ，就是为了能方便的截图。
+在ShareX之前，我一直用的是Greenshot，也非常的好用，也是一个开源软件，我还给作者捐了10刀。Greenshot的缺点是没有一个好的编辑器，简单用来截图也是非常好用的。
+主界面
+About
+我的主要用法也很简单
+ Capture region Capture active window  然后在Editor中进行简单的编辑，然后直接Paste到邮件，或者Jira中
+这个编辑器非常的好用，里面有常规的标注等操作，特别是有个编号的功能非常好用
+只要简单的点几下，就能画出看起来很不错的图来
+除了截图功能之外，ShareX也可以支持自动上传，但是他支持的destination好像都是国外流行的，我没用过上传功能。
+除了简单的截图功能，还可以直接Gif，这个也是非常有用的功能。以前用过单独的Gif制作软件，现在完全可以在一个截图软件中完成所有相关的功能。
+使用过程中我还碰到一个问题，PrintScr键被OneDrive Business占用，而且改不掉，不得已我只能把Break键设置成ShareX的快捷键。</description>
     </item>
     
     <item>
