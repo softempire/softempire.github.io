@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="dingsu" />
+  <meta property="og:url" content="https://adsdingsu.com/blog/hub-github%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/" />
+  <link rel="canonical" href="https://adsdingsu.com/blog/hub-github%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/adsdingsu.com\/"
+      },
+      "articleSection" : "post",
+      "name" : "Hub Github操作命令行工具",
+      "headline" : "Hub Github操作命令行工具",
+      "description" : "Git现在是我每天用的最多的软件了，跟Visual Studio一样，每天都在用，时时刻刻都在用。Github也是每天都打交道的网站，commit，pr，review，merge，search，每天做这些。\nHub(https:\/\/hub.github.com\/)就是一款Github的命令行操作工具，支持普通的Github跟Github Enterprise，非常的方便，很多操作比在网页上操作要方便的多。 Hub也支持大部分的Git命令，管网上推荐用Hub来代替Git的功能，同时又提供了Github的操作功能。 当然了，我主要用到的是Github操作相关的部分命令： 这些Github命令，跟Cmder的命令结合到一起，能组合成很方便的功能，比如我写了一个命令 listmypr，可以把当前Open状态的Assignee是我的pr都列出来，这样的话，每天下班前，我只要跑一下命令就能知道我还有没有PR pending在那里，需不需要去处理一下。",
+      "inLanguage" : "en-US",
+      "author" : "dingsu",
+      "creator" : "dingsu",
+      "publisher": "dingsu",
+      "accountablePerson" : "dingsu",
+      "copyrightHolder" : "dingsu",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-12-02 22:37:33 \x2b0800 CST",
+      "dateModified" : "2019-12-02 22:37:33 \x2b0800 CST",
+      "url" : "https:\/\/adsdingsu.com\/blog\/hub-github%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Hub Github操作命令行工具 - Dingsu&#39;s Blog</title>
+  <meta property="og:title" content="Hub Github操作命令行工具 - Dingsu&#39;s Blog" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="Git现在是我每天用的最多的软件了，跟Visual Studio一样，每天都在用，时时刻刻都在用。Github也是每天都打交道的网站，commit，pr，review，merge，search，每天做这些。
+Hub(https://hub.github.com/)就是一款Github的命令行操作工具，支持普通的Github跟Github Enterprise，非常的方便，很多操作比在网页上操作要方便的多。 Hub也支持大部分的Git命令，管网上推荐用Hub来代替Git的功能，同时又提供了Github的操作功能。 当然了，我主要用到的是Github操作相关的部分命令： 这些Github命令，跟Cmder的命令结合到一起，能组合成很方便的功能，比如我写了一个命令 listmypr，可以把当前Open状态的Assignee是我的pr都列出来，这样的话，每天下班前，我只要跑一下命令就能知道我还有没有PR pending在那里，需不需要去处理一下。" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Dingsu&#39;s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">无敌的丁苏</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Hub Github操作命令行工具</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2019-12-02 22:37:33 CST">
+                02 Dec 2019
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://adsdingsu.com/">@dingsu</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p>Git现在是我每天用的最多的软件了，跟Visual Studio一样，每天都在用，时时刻刻都在用。Github也是每天都打交道的网站，commit，pr，review，merge，search，每天做这些。</p>
+
+<p>Hub(<a href="https://hub.github.com/)就是一款Github的命令行操作工具，支持普通的Github跟Github">https://hub.github.com/)就是一款Github的命令行操作工具，支持普通的Github跟Github</a> Enterprise，非常的方便，很多操作比在网页上操作要方便的多。
+<img src="https://i.loli.net/2019/12/21/ef9EJlpuCZnBkdA.png" alt="" /></p>
+
+<p>Hub也支持大部分的Git命令，管网上推荐用Hub来代替Git的功能，同时又提供了Github的操作功能。
+<img src="https://i.loli.net/2019/12/21/HRzdf4mGWxFjJp2.png" alt="" /></p>
+
+<p>当然了，我主要用到的是Github操作相关的部分命令：
+<img src="https://i.loli.net/2019/12/21/iQTSHKPZk5241yd.png" alt="" /></p>
+
+<p>这些Github命令，跟Cmder的命令结合到一起，能组合成很方便的功能，比如我写了一个命令 listmypr，可以把当前Open状态的Assignee是我的pr都列出来，这样的话，每天下班前，我只要跑一下命令就能知道我还有没有PR pending在那里，需不需要去处理一下。</p>
+
+        </div>
+        
+
+        
+
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

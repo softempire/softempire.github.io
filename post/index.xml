@@ -156,12 +156,13 @@ App上内容也比较简单清晰，主要就是费用，费率，余额之类�
     </item>
     
     <item>
-      <title>Hub</title>
-      <link>https://adsdingsu.com/blog/hub/</link>
+      <title>Hub Github操作命令行工具</title>
+      <link>https://adsdingsu.com/blog/hub-github%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Mon, 02 Dec 2019 22:37:33 +0800</pubDate>
       
-      <guid>https://adsdingsu.com/blog/hub/</guid>
-      <description>Hub真是一个很好的软件，后面加介绍 </description>
+      <guid>https://adsdingsu.com/blog/hub-github%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</guid>
+      <description>Git现在是我每天用的最多的软件了，跟Visual Studio一样，每天都在用，时时刻刻都在用。Github也是每天都打交道的网站，commit，pr，review，merge，search，每天做这些。
+Hub(https://hub.github.com/)就是一款Github的命令行操作工具，支持普通的Github跟Github Enterprise，非常的方便，很多操作比在网页上操作要方便的多。 Hub也支持大部分的Git命令，管网上推荐用Hub来代替Git的功能，同时又提供了Github的操作功能。 当然了，我主要用到的是Github操作相关的部分命令： 这些Github命令，跟Cmder的命令结合到一起，能组合成很方便的功能，比如我写了一个命令 listmypr，可以把当前Open状态的Assignee是我的pr都列出来，这样的话，每天下班前，我只要跑一下命令就能知道我还有没有PR pending在那里，需不需要去处理一下。</description>
     </item>
     
     <item>
