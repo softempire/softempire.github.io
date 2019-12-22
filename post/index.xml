@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Dec 2019 10:50:49 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2019 10:53:14 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Unity</title>
+      <link>https://adsdingsu.com/blog/unity/</link>
+      <pubDate>Sun, 22 Dec 2019 10:53:14 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/unity/</guid>
+      <description>Unity是一个完整的商业游戏引擎，可以根据一套代码发布到不同的平台，而且他是用C#来写的，用起来特别的简单。最近Unity开始跟Autodesk合作在建筑领域里投入了，很值得学习一下。</description>
+    </item>
     
     <item>
       <title>Cocos</title>
