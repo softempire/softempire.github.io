@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://adsdingsu.com/blog/aws/</loc>
-    <lastmod>2019-12-16T23:00:32+08:00</lastmod>
+    <loc>https://adsdingsu.com/blog/cocos/</loc>
+    <lastmod>2019-12-22T10:50:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://adsdingsu.com/</loc>
-    <lastmod>2019-12-16T23:00:32+08:00</lastmod>
+    <lastmod>2019-12-22T10:50:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://adsdingsu.com/post/</loc>
+    <lastmod>2019-12-22T10:50:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/blog/aws/</loc>
     <lastmod>2019-12-16T23:00:32+08:00</lastmod>
   </url>
   

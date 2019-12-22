@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Dec 2019 23:00:32 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2019 10:50:49 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cocos</title>
+      <link>https://adsdingsu.com/blog/cocos/</link>
+      <pubDate>Sun, 22 Dec 2019 10:50:49 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/cocos/</guid>
+      <description>以前特别喜欢Cocos，研究过很长一段时间，也做了几个Cocos的游戏发布，后面也没什么反响，也就逐渐不研究了。</description>
+    </item>
     
     <item>
       <title>AWS</title>
