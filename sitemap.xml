@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://adsdingsu.com/blog/cmake/</loc>
-    <lastmod>2019-12-24T23:01:48+08:00</lastmod>
+    <loc>https://adsdingsu.com/</loc>
+    <lastmod>2019-12-28T13:16:06+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://adsdingsu.com/</loc>
-    <lastmod>2019-12-24T23:01:48+08:00</lastmod>
+    <loc>https://adsdingsu.com/blog/everything/</loc>
+    <lastmod>2019-12-28T13:16:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://adsdingsu.com/post/</loc>
+    <lastmod>2019-12-28T13:16:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/blog/cmake/</loc>
     <lastmod>2019-12-24T23:01:48+08:00</lastmod>
   </url>
   
