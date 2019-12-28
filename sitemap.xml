@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://adsdingsu.com/blog/arcgis/</loc>
-    <lastmod>2019-12-28T13:20:43+08:00</lastmod>
+    <loc>https://adsdingsu.com/</loc>
+    <lastmod>2019-12-28T13:25:41+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://adsdingsu.com/</loc>
-    <lastmod>2019-12-28T13:20:43+08:00</lastmod>
+    <loc>https://adsdingsu.com/blog/gtd/</loc>
+    <lastmod>2019-12-28T13:25:41+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://adsdingsu.com/post/</loc>
+    <lastmod>2019-12-28T13:25:41+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/blog/arcgis/</loc>
     <lastmod>2019-12-28T13:20:43+08:00</lastmod>
   </url>
   
