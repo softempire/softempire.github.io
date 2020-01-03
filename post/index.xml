@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jan 2020 08:39:22 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2020 20:42:26 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spike和Spark</title>
+      <link>https://adsdingsu.com/blog/spike%E5%92%8Cspark/</link>
+      <pubDate>Fri, 03 Jan 2020 20:42:26 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/spike%E5%92%8Cspark/</guid>
+      <description>本来一直用Spark，最近发现了Spike这个App，用下来感觉很不错，以后可能都切换到Spike了。 Spark也是非常好，但是有时候，不知道什么原因，就是无法打开正文内容，即使我看到了标题，就是看不到正文，翻墙也不行，体验非常的差。</description>
+    </item>
     
     <item>
       <title>智能指针</title>
