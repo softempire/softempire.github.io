@@ -239,7 +239,17 @@ Mailbird 这是我最近几年一直到现在一直用的软件。我最喜欢�
       <pubDate>Tue, 03 Dec 2019 07:20:43 +0800</pubDate>
       
       <guid>https://adsdingsu.com/blog/cmder/</guid>
-      <description></description>
+      <description>Cmder是Windows下非常好用的终端模拟器， 常用于替换windows自带的终端。它可以在不同的标签页中同时连接不同的底层Shell，包括cmd、PowerShell、Bash和WSL，并提供相关增强功能和更加便捷的操作方式，这也正是它被大家称作为Windows下的神器的原因。(前面这段是抄来的。。)
+Cmder确实是Windows下面的神器，至少对于开发人员来说肯定是的。这已经是我每天时时刻刻都在用的软件了。
+对于我来说，主要下面几个feature比较有用：
+ 多Tab
+ Git集成，开发每天就是提交代码，用命令行的Git非常的爽
+ 样子好看，样式字体都可以自定义
+ 可以直接Copy Paste
+ 支持各种自定义快捷键
+ Alias
+ 集成了很多Linux上面的命令，cat之类
+  总之这个是我在Windows上面用的时间最长的软件，可能等Windows官方的Terminal出来了会试试Terminal。</description>
     </item>
     
     <item>
