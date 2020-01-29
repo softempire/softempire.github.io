@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jan 2020 13:30:45 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2020 13:42:24 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>.NET Core</title>
+      <link>https://adsdingsu.com/blog/.net-core/</link>
+      <pubDate>Wed, 29 Jan 2020 13:42:24 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/.net-core/</guid>
+      <description>C#非常的好</description>
+    </item>
     
     <item>
       <title>AEC</title>
@@ -19,15 +28,6 @@
       <guid>https://adsdingsu.com/blog/aec/</guid>
       <description>The AEC industry consists of separate players &amp;ndash; architecture, engineering and construction &amp;ndash; that work together to bring a project to fruition. By integrating these seemingly separate entities into a single industry, architects, engineers and contractors can work more efficiently to achieve a common goal. The AEC industry has several practical applications that facilitate the technology, outsourcing and exchange of information within the industry.
 Three in One The fact that three different but related industries make up the AEC industry complicates industry standards.</description>
-    </item>
-    
-    <item>
-      <title>.NET Core</title>
-      <link>https://adsdingsu.com/blog/.net-core/</link>
-      <pubDate>Wed, 29 Jan 2020 13:28:43 +0800</pubDate>
-      
-      <guid>https://adsdingsu.com/blog/.net-core/</guid>
-      <description>C#非常的好</description>
     </item>
     
     <item>
