@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jan 2020 20:42:26 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2020 13:23:50 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OpenCV</title>
+      <link>https://adsdingsu.com/blog/opencv/</link>
+      <pubDate>Wed, 29 Jan 2020 13:23:50 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/opencv/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Spike和Spark</title>
