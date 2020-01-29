@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://adsdingsu.com/</loc>
-    <lastmod>2020-01-29T13:23:50+08:00</lastmod>
+    <loc>https://adsdingsu.com/blog/.net-core/</loc>
+    <lastmod>2020-01-29T13:28:43+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://adsdingsu.com/blog/opencv/</loc>
-    <lastmod>2020-01-29T13:23:50+08:00</lastmod>
+    <loc>https://adsdingsu.com/</loc>
+    <lastmod>2020-01-29T13:28:43+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://adsdingsu.com/post/</loc>
+    <lastmod>2020-01-29T13:28:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/blog/opencv/</loc>
     <lastmod>2020-01-29T13:23:50+08:00</lastmod>
   </url>
   
@@ -160,10 +165,6 @@
   <url>
     <loc>https://adsdingsu.com/blog/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2019-12-01T23:51:59+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://adsdingsu.com/blog/.net-core/</loc>
   </url>
   
   <url>
