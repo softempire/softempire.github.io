@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Feb 2020 23:55:28 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Feb 2020 00:09:37 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ML.NET</title>
+      <link>https://adsdingsu.com/blog/ml.net/</link>
+      <pubDate>Sun, 16 Feb 2020 00:09:37 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/ml.net/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Hyper</title>
@@ -19,7 +28,7 @@
       <guid>https://adsdingsu.com/blog/hyper/</guid>
       <description>一个新的command line工具，功能比较简单，但是样子比较好看，比Cmder好看多了
 https://hyper.is/
-有一个好的地方是Hyper可以集成Cmder，也就是说功能都是Cmder的，而界面都是Hyper的样子，这个非常推荐。</description>
+有一个好的地方是Hyper可以集成Cmder，也就是说功能都是Cmder的，而界面都是Hyper的样子，这个非常推荐。 </description>
     </item>
     
     <item>
