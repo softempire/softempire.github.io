@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Feb 2020 00:09:37 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Mar 2020 09:40:54 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在线教育</title>
+      <link>https://adsdingsu.com/blog/%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2/</link>
+      <pubDate>Sun, 01 Mar 2020 09:40:54 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ML.NET</title>
