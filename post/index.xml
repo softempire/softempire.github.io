@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Mar 2020 09:40:54 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Mar 2020 09:53:11 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Notion</title>
+      <link>https://adsdingsu.com/blog/notion/</link>
+      <pubDate>Sun, 01 Mar 2020 09:53:11 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/notion/</guid>
+      <description>现在的资料管理软件，类似Evernote，以前用过不觉得怎么样。昨天又用了一下，这才感觉Markdown编辑真的非常方便</description>
+    </item>
     
     <item>
       <title>在线教育</title>
