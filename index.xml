@@ -6,10 +6,20 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Apr 2020 11:29:03 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2020 21:44:02 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fyne</title>
+      <link>https://adsdingsu.com/blog/fyne/</link>
+      <pubDate>Sat, 11 Apr 2020 21:44:02 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/fyne/</guid>
+      <description>Fyne
+https://fyne.io/ Go语言的跨平台GUI库</description>
+    </item>
     
     <item>
       <title>Golang</title>
