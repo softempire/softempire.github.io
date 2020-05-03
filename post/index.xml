@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Apr 2020 22:30:12 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2020 09:32:50 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VTK</title>
+      <link>https://adsdingsu.com/blog/vtk/</link>
+      <pubDate>Sun, 03 May 2020 09:32:50 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/vtk/</guid>
+      <description>VTK is good</description>
+    </item>
     
     <item>
       <title>OpenCascade</title>
