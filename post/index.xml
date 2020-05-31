@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jun 2020 00:26:12 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2020 00:26:54 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LINQ</title>
+      <link>https://adsdingsu.com/blog/linq/</link>
+      <pubDate>Mon, 01 Jun 2020 00:26:54 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/linq/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Regex</title>
