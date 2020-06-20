@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jun 2020 21:45:43 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 21:48:41 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>std::forward_list</title>
+      <link>https://adsdingsu.com/blog/stdforward_list/</link>
+      <pubDate>Sat, 20 Jun 2020 21:48:41 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/stdforward_list/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>std::array</title>
