@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jun 2020 21:49:58 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 21:52:08 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nuget</title>
+      <link>https://adsdingsu.com/blog/nuget/</link>
+      <pubDate>Sat, 20 Jun 2020 21:52:08 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/nuget/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>MariaDB</title>
