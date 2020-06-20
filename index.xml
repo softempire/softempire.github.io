@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jun 2020 14:28:31 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 21:44:11 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>std::bind</title>
+      <link>https://adsdingsu.com/blog/stdbind/</link>
+      <pubDate>Sat, 20 Jun 2020 21:44:11 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/stdbind/</guid>
+      <description>std::bind</description>
+    </item>
     
     <item>
       <title>Docker</title>
