@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://adsdingsu.com/</loc>
-    <lastmod>2020-06-20T21:52:08+08:00</lastmod>
+    <loc>https://adsdingsu.com/blog/boost/</loc>
+    <lastmod>2020-06-22T23:19:31+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://adsdingsu.com/blog/nuget/</loc>
-    <lastmod>2020-06-20T21:52:08+08:00</lastmod>
+    <loc>https://adsdingsu.com/</loc>
+    <lastmod>2020-06-22T23:19:31+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://adsdingsu.com/post/</loc>
+    <lastmod>2020-06-22T23:19:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://adsdingsu.com/blog/nuget/</loc>
     <lastmod>2020-06-20T21:52:08+08:00</lastmod>
   </url>
   
