@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Jun 2020 23:19:31 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2020 21:58:51 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go module</title>
+      <link>https://adsdingsu.com/blog/go-module/</link>
+      <pubDate>Mon, 06 Jul 2020 21:58:51 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/go-module/</guid>
+      <description>Golang module</description>
+    </item>
     
     <item>
       <title>boost</title>
