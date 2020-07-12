@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Jul 2020 21:58:51 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2020 22:28:51 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Open Inventor</title>
+      <link>https://adsdingsu.com/blog/open-inventor/</link>
+      <pubDate>Sun, 12 Jul 2020 22:28:51 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/open-inventor/</guid>
+      <description>https://www.openinventor.com/en</description>
+    </item>
     
     <item>
       <title>Go module</title>
