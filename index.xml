@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Jul 2020 22:31:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2020 22:32:39 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Coin3D</title>
+      <link>https://adsdingsu.com/blog/coin3d/</link>
+      <pubDate>Sun, 12 Jul 2020 22:32:39 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/coin3d/</guid>
+      <description>https://github.com/coin3d/coin</description>
+    </item>
     
     <item>
       <title>ORGE3D</title>
