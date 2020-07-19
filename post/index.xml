@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Jul 2020 18:04:23 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2020 18:06:27 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Three.js</title>
+      <link>https://adsdingsu.com/blog/three.js/</link>
+      <pubDate>Sun, 19 Jul 2020 18:06:27 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/three.js/</guid>
+      <description>https://threejs.org/</description>
+    </item>
     
     <item>
       <title>QLayout</title>
