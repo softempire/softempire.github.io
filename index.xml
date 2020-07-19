@@ -6,10 +6,20 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jul 2020 07:35:12 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2020 18:04:23 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>QLayout</title>
+      <link>https://adsdingsu.com/blog/qlayout/</link>
+      <pubDate>Sun, 19 Jul 2020 18:04:23 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/qlayout/</guid>
+      <description>QLayout
+QHBoxLayout QVBoxLayout QGridLayout QFormLayout</description>
+    </item>
     
     <item>
       <title>HOOPS</title>
