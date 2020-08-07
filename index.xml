@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Aug 2020 18:50:04 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2020 22:17:19 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ninja</title>
+      <link>https://adsdingsu.com/blog/ninja/</link>
+      <pubDate>Fri, 07 Aug 2020 22:17:19 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/ninja/</guid>
+      <description>Ninja build system</description>
+    </item>
     
     <item>
       <title>QT parent-children relationship</title>
