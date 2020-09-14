@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Sep 2020 20:29:30 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2020 20:32:35 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FreeCAD</title>
+      <link>https://adsdingsu.com/blog/freecad/</link>
+      <pubDate>Mon, 14 Sep 2020 20:32:35 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/freecad/</guid>
+      <description>https://www.freecadweb.org/</description>
+    </item>
     
     <item>
       <title>std::move</title>
