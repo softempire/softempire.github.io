@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Sep 2020 20:32:35 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2020 22:51:37 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NamedScopedEnum</title>
+      <link>https://adsdingsu.com/blog/namedscopedenum/</link>
+      <pubDate>Sun, 20 Sep 2020 22:51:37 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/namedscopedenum/</guid>
+      <description>https://github.com/HerrNilZon/NamedScopedEnum</description>
+    </item>
     
     <item>
       <title>FreeCAD</title>
