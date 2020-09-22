@@ -6,10 +6,20 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Sep 2020 22:51:37 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2020 20:11:19 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Serialization</title>
+      <link>https://adsdingsu.com/blog/serialization/</link>
+      <pubDate>Tue, 22 Sep 2020 20:11:19 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/serialization/</guid>
+      <description>Boost.Serialization
+https://www.boost.org/doc/libs/1_74_0/libs/serialization/doc/index.html</description>
+    </item>
     
     <item>
       <title>NamedScopedEnum</title>
