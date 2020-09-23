@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2020 20:11:19 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2020 20:07:27 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Boost::Any</title>
+      <link>https://adsdingsu.com/blog/boostany/</link>
+      <pubDate>Wed, 23 Sep 2020 20:07:27 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/boostany/</guid>
+      <description>Boost Any and Variant</description>
+    </item>
     
     <item>
       <title>Serialization</title>
