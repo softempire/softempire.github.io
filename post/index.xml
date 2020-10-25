@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Oct 2020 20:57:33 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2020 09:51:58 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Forward Declearation</title>
+      <link>https://adsdingsu.com/blog/forward-declearation/</link>
+      <pubDate>Sun, 25 Oct 2020 09:51:58 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/forward-declearation/</guid>
+      <description>前置声明只需要考虑基类和成员变量的情况，其他的情况，例如函数返回值和函数参数都不需要include而可以用前置声明</description>
+    </item>
     
     <item>
       <title>Boost::Range</title>
