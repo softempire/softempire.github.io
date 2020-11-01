@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Oct 2020 09:51:58 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2020 10:06:47 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>QxOrm</title>
+      <link>https://adsdingsu.com/blog/qxorm/</link>
+      <pubDate>Sun, 01 Nov 2020 10:06:47 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/qxorm/</guid>
+      <description>Qt ORM framework https://www.qxorm.com/qxorm_en/home.html</description>
+    </item>
     
     <item>
       <title>Forward Declearation</title>
