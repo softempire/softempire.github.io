@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Dec 2020 22:57:37 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 08 Dec 2020 22:59:10 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOS</title>
+      <link>https://adsdingsu.com/blog/centos/</link>
+      <pubDate>Tue, 08 Dec 2020 22:59:10 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/centos/</guid>
+      <description>CentOS https://www.centos.org/</description>
+    </item>
     
     <item>
       <title>LibreCAD</title>
