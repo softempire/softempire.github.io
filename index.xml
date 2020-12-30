@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Dec 2020 20:15:29 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Dec 2020 13:11:13 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TensorFlow</title>
+      <link>https://adsdingsu.com/blog/tensorflow/</link>
+      <pubDate>Wed, 30 Dec 2020 13:11:13 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/tensorflow/</guid>
+      <description>我用学这个了</description>
+    </item>
     
     <item>
       <title>QCustomPlot Time</title>
