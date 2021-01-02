@@ -6,10 +6,23 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Dec 2020 13:11:13 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 02 Jan 2021 09:38:05 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Qt-Cmake</title>
+      <link>https://adsdingsu.com/blog/qt-cmake/</link>
+      <pubDate>Sat, 02 Jan 2021 09:38:05 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/qt-cmake/</guid>
+      <description>https://doc.qt.io/qt-5/cmake-get-started.html
+For find_package to be successful, CMake must find the Qt installation in one of the following ways:
+Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix. This is the recommended way.
+Sample:
+# cmake version cmake_minimum_required(VERSION 3.1.0) # project name project(helloworld VERSION 1.0.0 LANGUAGES CXX) # C++ set(CMAKE_CXX_STANDARD 11) set(CMAKE_CXX_STANDARD_REQUIRED ON) # set path for Find_*** set(CMAKE_MODULE_PATH &amp;quot;3rdParty&amp;quot;) # Qt auto on set(CMAKE_AUTOMOC ON) set(CMAKE_AUTORCC ON) set(CMAKE_AUTOUIC ON) if(CMAKE_VERSION VERSION_LESS &amp;quot;3.</description>
+    </item>
     
     <item>
       <title>TensorFlow</title>
