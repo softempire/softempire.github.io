@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Feb 2021 16:10:28 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Feb 2021 07:00:16 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AppStream</title>
+      <link>https://adsdingsu.com/blog/appstream/</link>
+      <pubDate>Mon, 15 Feb 2021 07:00:16 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/appstream/</guid>
+      <description>AWS AppStream</description>
+    </item>
     
     <item>
       <title>Revit Family</title>
