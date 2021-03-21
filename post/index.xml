@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Feb 2021 07:00:16 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Mar 2021 23:08:59 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ZeroMQ</title>
+      <link>https://adsdingsu.com/blog/zeromq/</link>
+      <pubDate>Sun, 21 Mar 2021 23:08:59 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/zeromq/</guid>
+      <description>ZeroMQ
+Interprocess Communication library</description>
+    </item>
     
     <item>
       <title>AppStream</title>
