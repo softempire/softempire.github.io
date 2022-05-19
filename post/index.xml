@@ -6,56 +6,10 @@
     <description>Recent content in Posts on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Apr 2021 07:07:34 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 02 Jan 2021 09:38:05 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Swig</title>
-      <link>https://adsdingsu.com/blog/swig/</link>
-      <pubDate>Fri, 09 Apr 2021 07:07:34 +0800</pubDate>
-      
-      <guid>https://adsdingsu.com/blog/swig/</guid>
-      <description>Tool to generate wrapper</description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://adsdingsu.com/blog/python/</link>
-      <pubDate>Fri, 09 Apr 2021 07:06:01 +0800</pubDate>
-      
-      <guid>https://adsdingsu.com/blog/python/</guid>
-      <description>Start writing Python</description>
-    </item>
-    
-    <item>
-      <title>ZeroMQ</title>
-      <link>https://adsdingsu.com/blog/zeromq/</link>
-      <pubDate>Sun, 21 Mar 2021 23:08:59 +0800</pubDate>
-      
-      <guid>https://adsdingsu.com/blog/zeromq/</guid>
-      <description>ZeroMQ
-Interprocess Communication library</description>
-    </item>
-    
-    <item>
-      <title>AppStream</title>
-      <link>https://adsdingsu.com/blog/appstream/</link>
-      <pubDate>Mon, 15 Feb 2021 07:00:16 +0800</pubDate>
-      
-      <guid>https://adsdingsu.com/blog/appstream/</guid>
-      <description>AWS AppStream</description>
-    </item>
-    
-    <item>
-      <title>Revit Family</title>
-      <link>https://adsdingsu.com/blog/revit-family/</link>
-      <pubDate>Fri, 12 Feb 2021 16:10:28 +0800</pubDate>
-      
-      <guid>https://adsdingsu.com/blog/revit-family/</guid>
-      <description>Revit family</description>
-    </item>
     
     <item>
       <title>Qt-Cmake</title>
@@ -431,6 +385,15 @@ https://www.qcustomplot.com/index.php/introduction</description>
       
       <guid>https://adsdingsu.com/blog/regex/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Regex</title>
+      <link>https://adsdingsu.com/blog/regex/</link>
+      <pubDate>Mon, 01 Jun 2020 00:26:12 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/regex/</guid>
+      <description>Rust Introduction</description>
     </item>
     
     <item>
