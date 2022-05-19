@@ -6,10 +6,19 @@
     <description>Recent content on Dingsu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 Jan 2021 09:38:05 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 May 2022 00:26:12 +0800</lastBuildDate>
     
 	<atom:link href="https://adsdingsu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rust</title>
+      <link>https://adsdingsu.com/blog/rust/</link>
+      <pubDate>Thu, 19 May 2022 00:26:12 +0800</pubDate>
+      
+      <guid>https://adsdingsu.com/blog/rust/</guid>
+      <description>Rust Introduction</description>
+    </item>
     
     <item>
       <title>Qt-Cmake</title>
@@ -385,15 +394,6 @@ https://www.qcustomplot.com/index.php/introduction</description>
       
       <guid>https://adsdingsu.com/blog/regex/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Regex</title>
-      <link>https://adsdingsu.com/blog/regex/</link>
-      <pubDate>Mon, 01 Jun 2020 00:26:12 +0800</pubDate>
-      
-      <guid>https://adsdingsu.com/blog/regex/</guid>
-      <description>Rust Introduction</description>
     </item>
     
     <item>
