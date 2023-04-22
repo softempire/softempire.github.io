@@ -6,10 +6,19 @@
     <description>Recent content on Zhiqiang&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 May 2022 21:58:17 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 22 Apr 2023 10:26:40 +0800</lastBuildDate>
     
 	<atom:link href="https://zqding.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python Typing</title>
+      <link>https://zqding.com/blog/python-typing/</link>
+      <pubDate>Sat, 22 Apr 2023 10:26:40 +0800</pubDate>
+      
+      <guid>https://zqding.com/blog/python-typing/</guid>
+      <description>Pythong typing</description>
+    </item>
     
     <item>
       <title>React</title>
