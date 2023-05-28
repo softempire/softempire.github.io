@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Zhiqiang&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 May 2023 20:34:50 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 28 May 2023 18:15:42 +0800</lastBuildDate>
     
 	<atom:link href="https://zqding.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gdb</title>
+      <link>https://zqding.com/blog/gdb/</link>
+      <pubDate>Sun, 28 May 2023 18:15:42 +0800</pubDate>
+      
+      <guid>https://zqding.com/blog/gdb/</guid>
+      <description>调试工具。虽然它不像 Windows 诸多开发环境中的图形界面调试工具，但在 Linux 下开发程 序时，你会发现 gdb 调试工具十分强大，更适合字符界面环境，毕竟 Linux 系统很多都是字符界面系统。</description>
+    </item>
     
     <item>
       <title>同济大学</title>
