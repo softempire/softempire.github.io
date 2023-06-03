@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Zhiqiang&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 May 2023 18:15:42 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 03 Jun 2023 13:24:39 +0800</lastBuildDate>
     
 	<atom:link href="https://zqding.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flex</title>
+      <link>https://zqding.com/blog/flex/</link>
+      <pubDate>Sat, 03 Jun 2023 13:24:39 +0800</pubDate>
+      
+      <guid>https://zqding.com/blog/flex/</guid>
+      <description>Flex and Bison</description>
+    </item>
     
     <item>
       <title>Gdb</title>
