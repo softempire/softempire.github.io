@@ -2,11 +2,9 @@
 PublishBlog.py - 一键发布博客文章
 
 用法:
-    python PublishBlog.py <post文件名(不带.md后缀)>
-
-示例:
-    python PublishBlog.py AI
-    python PublishBlog.py Antigravity
+    python PublishBlog.py --all           自动检测并发布所有未发布的文章
+    python PublishBlog.py AI              发布指定文章
+    python PublishBlog.py AI Antigravity  发布多篇文章
 
 功能:
     1. 读取 content/post/<name>.md 中的 front matter 和正文
@@ -185,16 +183,14 @@ def parse_markdown(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # 解析 front matter (--- ... ---)
     fm_match = re.match(r'^---\s*\n(.*?)\n---\s*\n(.*)', content, re.DOTALL)
     if not fm_match:
-        print(f"错误: 无法解析 {filepath} 的 front matter")
-        sys.exit(1)
+        print(f"  错误: 无法解析 {filepath} 的 front matter")
+        return None, None
 
     fm_text = fm_match.group(1)
     body = fm_match.group(2).strip()
 
-    # 提取 front matter 字段
     meta = {}
     for line in fm_text.strip().split('\n'):
         if ':' in line:
@@ -213,7 +209,6 @@ def markdown_to_html(md_text):
     code_lines = []
 
     for line in lines:
-        # 代码块
         if line.startswith('```'):
             if not in_code_block:
                 in_code_block = True
@@ -232,7 +227,6 @@ def markdown_to_html(md_text):
             code_lines.append(line)
             continue
 
-        # 标题
         if line.startswith('######'):
             html_parts.append(f'<h6>{line[6:].strip()}</h6>')
         elif line.startswith('#####'):
@@ -250,7 +244,6 @@ def markdown_to_html(md_text):
         elif line.startswith('- '):
             html_parts.append(f'<li>{line[2:].strip()}</li>')
         elif line.startswith('!['):
-            # 图片 ![alt](url)
             img_match = re.match(r'!\[(.*?)\]\((.*?)\)', line)
             if img_match:
                 alt, src = img_match.group(1), img_match.group(2)
@@ -258,13 +251,9 @@ def markdown_to_html(md_text):
             else:
                 html_parts.append(f'<p>{line}</p>')
         else:
-            # 处理行内链接 [text](url)
             line = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', line)
-            # 处理行内代码 `code`
             line = re.sub(r'`([^`]+)`', r'<code>\1</code>', line)
-            # 粗体 **text**
             line = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', line)
-            # 斜体 *text*
             line = re.sub(r'\*(.*?)\*', r'<em>\1</em>', line)
             html_parts.append(f'<p>{line}</p>')
 
@@ -273,7 +262,6 @@ def markdown_to_html(md_text):
 
 def parse_date(date_str):
     """解析日期字符串，返回 datetime 对象"""
-    # 处理格式: 2026-03-08T11:41:26+08:00
     date_str = re.sub(r'([+-]\d{2}):(\d{2})$', r'\1\2', date_str)
     try:
         return datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%S%z')
@@ -296,7 +284,6 @@ def update_index_html(slug, title, dt):
     date_short = f"{months[dt.month - 1]} {dt.day:02d}"
     date_full = dt.strftime('%Y-%m-%d %H:%M:%S') + ' CST'
 
-    # 检查文章是否已经在列表中
     if f'href="/blog/{slug}/"' in html:
         print(f"  文章 {slug} 已在 index.html 中，跳过更新列表")
         return
@@ -308,17 +295,13 @@ def update_index_html(slug, title, dt):
         title=title
     )
 
-    # 检查是否已有该年份的 section
     year_pattern = f'<h1 class="site-date-catalog">{year}</h1>'
     if year_pattern in html:
-        # 在该年份标题后插入新条目
         insert_pos = html.index(year_pattern) + len(year_pattern)
-        # 跳过换行和空白
         while insert_pos < len(html) and html[insert_pos] in '\r\n \t':
             insert_pos += 1
         html = html[:insert_pos] + new_entry + html[insert_pos:]
     else:
-        # 创建新的年份 section，插入到 posts-list 最前面
         new_section = f'''          <section>
             <h1 class="site-date-catalog">{year}</h1>
 {new_entry}
@@ -365,11 +348,12 @@ def create_blog_page(slug, title, dt, content_html, description):
     print(f"  已生成 blog/{slug}/index.html")
 
 
-def git_publish(post_name):
+def git_publish(post_names):
     """执行 git add, commit, push"""
     print("\n正在提交到 GitHub...")
     subprocess.run(['git', 'add', '.'], cwd=SCRIPT_DIR)
-    subprocess.run(['git', 'commit', '-m', f'Publish post: {post_name}'], cwd=SCRIPT_DIR)
+    msg = f'Publish post: {", ".join(post_names)}'
+    subprocess.run(['git', 'commit', '-m', msg], cwd=SCRIPT_DIR)
     result = subprocess.run(['git', 'push'], cwd=SCRIPT_DIR, capture_output=True, text=True)
     if result.returncode == 0:
         print("  已推送到 GitHub！稍等片刻，博客即可对外可见。")
@@ -378,62 +362,106 @@ def git_publish(post_name):
         print("  请检查网络连接或 SSH 密钥配置。")
 
 
-def main():
-    if len(sys.argv) < 2:
-        print("用法: python PublishBlog.py <post名称>")
-        print("示例: python PublishBlog.py AI")
-        print("      python PublishBlog.py Antigravity")
-        print()
-        print("也可以一次发布多篇:")
-        print("      python PublishBlog.py AI Antigravity")
-        sys.exit(1)
+def find_unpublished_posts():
+    """扫描 content/post/ 目录，找出尚未在 blog/ 目录中生成页面的文章"""
+    post_dir = os.path.join(SCRIPT_DIR, 'content', 'post')
+    if not os.path.isdir(post_dir):
+        print("错误: content/post/ 目录不存在")
+        return []
 
-    post_names = sys.argv[1:]
-
-    for post_name in post_names:
-        md_path = os.path.join(SCRIPT_DIR, 'content', 'post', f'{post_name}.md')
-        if not os.path.exists(md_path):
-            print(f"错误: 找不到文件 {md_path}")
-            print(f"请先运行 CreatePost.bat {post_name} 创建文章。")
+    unpublished = []
+    for filename in os.listdir(post_dir):
+        if not filename.endswith('.md'):
             continue
-
-        print(f"\n========== 发布文章: {post_name} ==========")
-
-        # 1. 解析 Markdown
-        meta, body = parse_markdown(md_path)
-        title = meta.get('title', post_name)
-        date_str = meta.get('date', '')
-        draft = meta.get('draft', 'false').lower()
-
-        if draft == 'true':
-            print(f"  警告: {post_name} 标记为草稿 (draft: true)，将自动设为 false")
-            # 修改源文件
-            with open(md_path, 'r', encoding='utf-8') as f:
-                md_content = f.read()
-            md_content = md_content.replace('draft: true', 'draft: false')
-            with open(md_path, 'w', encoding='utf-8') as f:
-                f.write(md_content)
-
-        dt = parse_date(date_str) if date_str else datetime.now()
+        post_name = filename[:-3]  # 去掉 .md 后缀
         slug = post_name.lower()
+        blog_page = os.path.join(SCRIPT_DIR, 'blog', slug, 'index.html')
+        if not os.path.exists(blog_page):
+            unpublished.append(post_name)
+        else:
+            # 检查 md 文件是否比 html 文件更新
+            md_path = os.path.join(post_dir, filename)
+            if os.path.getmtime(md_path) > os.path.getmtime(blog_page):
+                unpublished.append(post_name)
 
-        # 2. 转换 Markdown 为 HTML
-        content_html = markdown_to_html(body)
+    return unpublished
 
-        # 取正文第一行作为 description
-        first_line = body.split('\n')[0].strip() if body else title
-        description = first_line[:200]
 
-        # 3. 生成博客页面
-        create_blog_page(slug, title, dt, content_html, description)
+def publish_post(post_name):
+    """发布单篇文章"""
+    md_path = os.path.join(SCRIPT_DIR, 'content', 'post', f'{post_name}.md')
+    if not os.path.exists(md_path):
+        print(f"  错误: 找不到文件 {md_path}")
+        return False
 
-        # 4. 更新 index.html 列表
-        update_index_html(slug, title, dt)
+    print(f"\n========== 发布文章: {post_name} ==========")
 
-    # 5. Git 提交并推送
-    git_publish(', '.join(post_names))
+    # 1. 解析 Markdown
+    meta, body = parse_markdown(md_path)
+    if meta is None:
+        return False
 
-    print("\n✅ 发布完成！")
+    title = meta.get('title', post_name)
+    date_str = meta.get('date', '')
+    draft = meta.get('draft', 'false').lower()
+
+    if draft == 'true':
+        print(f"  注意: {post_name} 标记为草稿，自动改为 draft: false")
+        with open(md_path, 'r', encoding='utf-8') as f:
+            md_content = f.read()
+        md_content = md_content.replace('draft: true', 'draft: false')
+        with open(md_path, 'w', encoding='utf-8') as f:
+            f.write(md_content)
+
+    dt = parse_date(date_str) if date_str else datetime.now()
+    slug = post_name.lower()
+
+    # 2. 转换 Markdown 为 HTML
+    content_html = markdown_to_html(body)
+
+    # 取正文第一行作为 description
+    first_line = body.split('\n')[0].strip() if body else title
+    description = first_line[:200]
+
+    # 3. 生成博客页面
+    create_blog_page(slug, title, dt, content_html, description)
+
+    # 4. 更新 index.html 列表
+    update_index_html(slug, title, dt)
+
+    return True
+
+
+def main():
+    # --all 模式: 自动检测未发布的文章
+    if len(sys.argv) == 2 and sys.argv[1] == '--all':
+        post_names = find_unpublished_posts()
+        if not post_names:
+            print("没有检测到需要发布的新文章。")
+            print("(所有 content/post/*.md 都已经有对应的 blog 页面且未被修改)")
+            return
+        print(f"检测到 {len(post_names)} 篇需要发布的文章: {', '.join(post_names)}")
+    elif len(sys.argv) >= 2:
+        post_names = sys.argv[1:]
+    else:
+        # 默认也是 --all 模式
+        post_names = find_unpublished_posts()
+        if not post_names:
+            print("没有检测到需要发布的新文章。")
+            print("(所有 content/post/*.md 都已经有对应的 blog 页面且未被修改)")
+            return
+        print(f"检测到 {len(post_names)} 篇需要发布的文章: {', '.join(post_names)}")
+
+    published = []
+    for name in post_names:
+        if publish_post(name):
+            published.append(name)
+
+    if published:
+        git_publish(published)
+        print(f"\n✅ 成功发布 {len(published)} 篇文章！")
+    else:
+        print("\n没有文章被成功发布。")
 
 
 if __name__ == '__main__':
