@@ -84,7 +84,7 @@ BLOG_PAGE_TEMPLATE = r'''<!DOCTYPE html>
 <body>
   <article class="post " id="article">
     <div class="row">
-      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-8 col-lg-offset-2">
         <div class="site-header">
           
 <header>
@@ -156,7 +156,18 @@ BLOG_PAGE_TEMPLATE = r'''<!DOCTYPE html>
   
 </script>
 
-  
+<div class="lightbox-overlay" id="lightbox-overlay" onclick="this.classList.remove('active')">
+  <img id="lightbox-img" src="" alt="" />
+</div>
+<script>
+  document.querySelectorAll('.post-content img').forEach(function(img) {
+    img.addEventListener('click', function() {
+      var overlay = document.getElementById('lightbox-overlay');
+      document.getElementById('lightbox-img').src = this.src;
+      overlay.classList.add('active');
+    });
+  });
+</script>
 
 </body>
 

@@ -105,9 +105,8 @@ a:hover {
 .post img {
   max-width: 100%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 12px;
+  cursor: pointer;
 }
 
 .post-date {
@@ -182,4 +181,31 @@ a:hover {
   position: absolute;
   bottom: 0;
   background: white;
+}
+
+/* Lightbox overlay for full-size image preview */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.lightbox-overlay.active {
+  display: flex;
+}
+
+.lightbox-overlay img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
