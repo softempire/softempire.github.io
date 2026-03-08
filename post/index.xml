@@ -2,175 +2,175 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Zhiqiang&#39;s Blog</title>
-    <link>https://zqding.com/post/</link>
+    <link>https://www.dingzhiqiang.com/post/</link>
     <description>Recent content in Posts on Zhiqiang&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 03 Jun 2023 13:24:39 +0800</lastBuildDate>
     
-	<atom:link href="https://zqding.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.dingzhiqiang.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Flex</title>
-      <link>https://zqding.com/blog/flex/</link>
+      <link>https://www.dingzhiqiang.com/blog/flex/</link>
       <pubDate>Sat, 03 Jun 2023 13:24:39 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/flex/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/flex/</guid>
       <description>Flex and Bison</description>
     </item>
     
     <item>
       <title>Gdb</title>
-      <link>https://zqding.com/blog/gdb/</link>
+      <link>https://www.dingzhiqiang.com/blog/gdb/</link>
       <pubDate>Sun, 28 May 2023 18:15:42 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/gdb/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/gdb/</guid>
       <description>调试工具。虽然它不像 Windows 诸多开发环境中的图形界面调试工具，但在 Linux 下开发程 序时，你会发现 gdb 调试工具十分强大，更适合字符界面环境，毕竟 Linux 系统很多都是字符界面系统。</description>
     </item>
     
     <item>
       <title>同济大学</title>
-      <link>https://zqding.com/blog/%E5%90%8C%E6%B5%8E%E5%A4%A7%E5%AD%A6/</link>
+      <link>https://www.dingzhiqiang.com/blog/%E5%90%8C%E6%B5%8E%E5%A4%A7%E5%AD%A6/</link>
       <pubDate>Sat, 13 May 2023 20:34:50 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/%E5%90%8C%E6%B5%8E%E5%A4%A7%E5%AD%A6/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/%E5%90%8C%E6%B5%8E%E5%A4%A7%E5%AD%A6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mid Journey</title>
-      <link>https://zqding.com/blog/mid-journey/</link>
+      <link>https://www.dingzhiqiang.com/blog/mid-journey/</link>
       <pubDate>Sun, 07 May 2023 09:25:52 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/mid-journey/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/mid-journey/</guid>
       <description>根据描述自动生成图像</description>
     </item>
     
     <item>
       <title>草莓音乐节</title>
-      <link>https://zqding.com/blog/%E8%8D%89%E8%8E%93%E9%9F%B3%E4%B9%90%E8%8A%82/</link>
+      <link>https://www.dingzhiqiang.com/blog/%E8%8D%89%E8%8E%93%E9%9F%B3%E4%B9%90%E8%8A%82/</link>
       <pubDate>Tue, 02 May 2023 22:01:24 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/%E8%8D%89%E8%8E%93%E9%9F%B3%E4%B9%90%E8%8A%82/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/%E8%8D%89%E8%8E%93%E9%9F%B3%E4%B9%90%E8%8A%82/</guid>
       <description></description>
     </item>
     
     <item>
       <title>红楼梦</title>
-      <link>https://zqding.com/blog/%E7%BA%A2%E6%A5%BC%E6%A2%A6/</link>
+      <link>https://www.dingzhiqiang.com/blog/%E7%BA%A2%E6%A5%BC%E6%A2%A6/</link>
       <pubDate>Sun, 30 Apr 2023 22:01:50 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/%E7%BA%A2%E6%A5%BC%E6%A2%A6/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/%E7%BA%A2%E6%A5%BC%E6%A2%A6/</guid>
       <description>昨夜朱楼梦，今宵水国吟</description>
     </item>
     
     <item>
       <title>CFD</title>
-      <link>https://zqding.com/blog/cfd/</link>
+      <link>https://www.dingzhiqiang.com/blog/cfd/</link>
       <pubDate>Sat, 29 Apr 2023 18:35:05 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/cfd/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/cfd/</guid>
       <description>CFD（Computational Fluid Dynamics，计算流体动力学）是一种通过数值方法和高性能计算机模拟分析流体流动的技术。它是流体力学领域的一个子领域，主要用于研究流体在各种条件下的行为、性能和流动特征。
 CFD 技术在许多工程领域都有广泛应用，如航空航天、汽车、建筑、化工和生物医学等。通过对流体流动的模拟，工程师和研究人员可以优化设计、提高性能并降低成本。</description>
     </item>
     
     <item>
       <title>太仓州</title>
-      <link>https://zqding.com/blog/%E5%A4%AA%E4%BB%93%E5%B7%9E/</link>
+      <link>https://www.dingzhiqiang.com/blog/%E5%A4%AA%E4%BB%93%E5%B7%9E/</link>
       <pubDate>Sat, 22 Apr 2023 10:39:51 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/%E5%A4%AA%E4%BB%93%E5%B7%9E/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/%E5%A4%AA%E4%BB%93%E5%B7%9E/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python Typing</title>
-      <link>https://zqding.com/blog/python-typing/</link>
+      <link>https://www.dingzhiqiang.com/blog/python-typing/</link>
       <pubDate>Sat, 22 Apr 2023 10:26:40 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/python-typing/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/python-typing/</guid>
       <description>Pythong typing</description>
     </item>
     
     <item>
       <title>React</title>
-      <link>https://zqding.com/blog/react/</link>
+      <link>https://www.dingzhiqiang.com/blog/react/</link>
       <pubDate>Thu, 19 May 2022 21:58:17 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/react/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/react/</guid>
       <description>React</description>
     </item>
     
     <item>
       <title>PKPM</title>
-      <link>https://zqding.com/blog/pkpm/</link>
+      <link>https://www.dingzhiqiang.com/blog/pkpm/</link>
       <pubDate>Thu, 19 May 2022 21:56:52 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/pkpm/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/pkpm/</guid>
       <description>PKPM</description>
     </item>
     
     <item>
       <title>mvvm</title>
-      <link>https://zqding.com/blog/mvvm/</link>
+      <link>https://www.dingzhiqiang.com/blog/mvvm/</link>
       <pubDate>Thu, 19 May 2022 21:56:09 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/mvvm/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/mvvm/</guid>
       <description>mvvm</description>
     </item>
     
     <item>
       <title>FastAPI</title>
-      <link>https://zqding.com/blog/fastapi/</link>
+      <link>https://www.dingzhiqiang.com/blog/fastapi/</link>
       <pubDate>Thu, 19 May 2022 21:53:35 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/fastapi/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/fastapi/</guid>
       <description>FastAPI</description>
     </item>
     
     <item>
       <title>CLI11</title>
-      <link>https://zqding.com/blog/cli11/</link>
+      <link>https://www.dingzhiqiang.com/blog/cli11/</link>
       <pubDate>Thu, 19 May 2022 21:49:49 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/cli11/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/cli11/</guid>
       <description>CLI11</description>
     </item>
     
     <item>
       <title>pybind11</title>
-      <link>https://zqding.com/blog/pybind11/</link>
+      <link>https://www.dingzhiqiang.com/blog/pybind11/</link>
       <pubDate>Thu, 19 May 2022 21:49:14 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/pybind11/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/pybind11/</guid>
       <description>pybind11</description>
     </item>
     
     <item>
       <title>VTK.NET</title>
-      <link>https://zqding.com/blog/vtk.net/</link>
+      <link>https://www.dingzhiqiang.com/blog/vtk.net/</link>
       <pubDate>Thu, 19 May 2022 21:41:54 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/vtk.net/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/vtk.net/</guid>
       <description>.NET 版本的VTK</description>
     </item>
     
     <item>
       <title>Rust</title>
-      <link>https://zqding.com/blog/rust/</link>
+      <link>https://www.dingzhiqiang.com/blog/rust/</link>
       <pubDate>Thu, 19 May 2022 00:26:12 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/rust/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/rust/</guid>
       <description>Rust Introduction</description>
     </item>
     
     <item>
       <title>Qt-Cmake</title>
-      <link>https://zqding.com/blog/qt-cmake/</link>
+      <link>https://www.dingzhiqiang.com/blog/qt-cmake/</link>
       <pubDate>Sat, 02 Jan 2021 09:38:05 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/qt-cmake/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/qt-cmake/</guid>
       <description>https://doc.qt.io/qt-5/cmake-get-started.html
 For find_package to be successful, CMake must find the Qt installation in one of the following ways:
 Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix. This is the recommended way.
@@ -180,572 +180,572 @@ Sample:
     
     <item>
       <title>TensorFlow</title>
-      <link>https://zqding.com/blog/tensorflow/</link>
+      <link>https://www.dingzhiqiang.com/blog/tensorflow/</link>
       <pubDate>Wed, 30 Dec 2020 13:11:13 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/tensorflow/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/tensorflow/</guid>
       <description>我要学这个了</description>
     </item>
     
     <item>
       <title>QCustomPlot Time</title>
-      <link>https://zqding.com/blog/qcustomplot-time/</link>
+      <link>https://www.dingzhiqiang.com/blog/qcustomplot-time/</link>
       <pubDate>Sun, 13 Dec 2020 20:15:29 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/qcustomplot-time/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/qcustomplot-time/</guid>
       <description>QCustomPlot Time setting</description>
     </item>
     
     <item>
       <title>CentOS</title>
-      <link>https://zqding.com/blog/centos/</link>
+      <link>https://www.dingzhiqiang.com/blog/centos/</link>
       <pubDate>Tue, 08 Dec 2020 22:59:10 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/centos/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/centos/</guid>
       <description>CentOS https://www.centos.org/</description>
     </item>
     
     <item>
       <title>LibreCAD</title>
-      <link>https://zqding.com/blog/librecad/</link>
+      <link>https://www.dingzhiqiang.com/blog/librecad/</link>
       <pubDate>Tue, 08 Dec 2020 22:57:37 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/librecad/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/librecad/</guid>
       <description>LibreCAD https://github.com/LibreCAD/LibreCAD</description>
     </item>
     
     <item>
       <title>C&#43;&#43; raw string</title>
-      <link>https://zqding.com/blog/c-raw-string/</link>
+      <link>https://www.dingzhiqiang.com/blog/c-raw-string/</link>
       <pubDate>Sun, 01 Nov 2020 10:08:56 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/c-raw-string/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/c-raw-string/</guid>
       <description>auto path = R&amp;rdquo;(M:\thisfile.txt)&amp;ldquo;;</description>
     </item>
     
     <item>
       <title>QxOrm</title>
-      <link>https://zqding.com/blog/qxorm/</link>
+      <link>https://www.dingzhiqiang.com/blog/qxorm/</link>
       <pubDate>Sun, 01 Nov 2020 10:06:47 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/qxorm/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/qxorm/</guid>
       <description>Qt ORM framework https://www.qxorm.com/qxorm_en/home.html</description>
     </item>
     
     <item>
       <title>Forward Declearation</title>
-      <link>https://zqding.com/blog/forward-declearation/</link>
+      <link>https://www.dingzhiqiang.com/blog/forward-declearation/</link>
       <pubDate>Sun, 25 Oct 2020 09:51:58 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/forward-declearation/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/forward-declearation/</guid>
       <description>前置声明只需要考虑基类和成员变量的情况，其他的情况，例如函数返回值和函数参数都不需要include而可以用前置声明</description>
     </item>
     
     <item>
       <title>Boost::Range</title>
-      <link>https://zqding.com/blog/boostrange/</link>
+      <link>https://www.dingzhiqiang.com/blog/boostrange/</link>
       <pubDate>Mon, 19 Oct 2020 20:57:33 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/boostrange/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/boostrange/</guid>
       <description>Boost range is googd</description>
     </item>
     
     <item>
       <title>Boost ScopeExit</title>
-      <link>https://zqding.com/blog/boost-scopeexit/</link>
+      <link>https://www.dingzhiqiang.com/blog/boost-scopeexit/</link>
       <pubDate>Tue, 06 Oct 2020 22:34:52 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/boost-scopeexit/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/boost-scopeexit/</guid>
       <description>ScopeExit is a macro like resource guard
 https://theboostcpplibraries.com/boost.scopeexit</description>
     </item>
     
     <item>
       <title>Boost::Any</title>
-      <link>https://zqding.com/blog/boostany/</link>
+      <link>https://www.dingzhiqiang.com/blog/boostany/</link>
       <pubDate>Wed, 23 Sep 2020 20:07:27 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/boostany/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/boostany/</guid>
       <description>Boost Any and Variant</description>
     </item>
     
     <item>
       <title>Serialization</title>
-      <link>https://zqding.com/blog/serialization/</link>
+      <link>https://www.dingzhiqiang.com/blog/serialization/</link>
       <pubDate>Tue, 22 Sep 2020 20:11:19 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/serialization/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/serialization/</guid>
       <description>Boost.Serialization
 https://www.boost.org/doc/libs/1_74_0/libs/serialization/doc/index.html</description>
     </item>
     
     <item>
       <title>NamedScopedEnum</title>
-      <link>https://zqding.com/blog/namedscopedenum/</link>
+      <link>https://www.dingzhiqiang.com/blog/namedscopedenum/</link>
       <pubDate>Sun, 20 Sep 2020 22:51:37 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/namedscopedenum/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/namedscopedenum/</guid>
       <description>https://github.com/HerrNilZon/NamedScopedEnum</description>
     </item>
     
     <item>
       <title>FreeCAD</title>
-      <link>https://zqding.com/blog/freecad/</link>
+      <link>https://www.dingzhiqiang.com/blog/freecad/</link>
       <pubDate>Mon, 14 Sep 2020 20:32:35 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/freecad/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/freecad/</guid>
       <description>https://www.freecadweb.org/</description>
     </item>
     
     <item>
       <title>std::move</title>
-      <link>https://zqding.com/blog/stdmove/</link>
+      <link>https://www.dingzhiqiang.com/blog/stdmove/</link>
       <pubDate>Mon, 14 Sep 2020 20:29:30 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/stdmove/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/stdmove/</guid>
       <description>std::move is important.</description>
     </item>
     
     <item>
       <title>QCustomPlot</title>
-      <link>https://zqding.com/blog/qcustomplot/</link>
+      <link>https://www.dingzhiqiang.com/blog/qcustomplot/</link>
       <pubDate>Sun, 23 Aug 2020 23:59:08 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/qcustomplot/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/qcustomplot/</guid>
       <description>QCustomPlot
 https://www.qcustomplot.com/index.php/introduction</description>
     </item>
     
     <item>
       <title>QAbstractItemModel</title>
-      <link>https://zqding.com/blog/qabstractitemmodel/</link>
+      <link>https://www.dingzhiqiang.com/blog/qabstractitemmodel/</link>
       <pubDate>Sat, 08 Aug 2020 23:16:57 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/qabstractitemmodel/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/qabstractitemmodel/</guid>
       <description>We can create QAbstractItemModel derived class to customize the model behavior.</description>
     </item>
     
     <item>
       <title>Ninja</title>
-      <link>https://zqding.com/blog/ninja/</link>
+      <link>https://www.dingzhiqiang.com/blog/ninja/</link>
       <pubDate>Fri, 07 Aug 2020 22:17:19 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/ninja/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/ninja/</guid>
       <description>Ninja build system</description>
     </item>
     
     <item>
       <title>QT parent-children relationship</title>
-      <link>https://zqding.com/blog/qt-parent-children-relationship/</link>
+      <link>https://www.dingzhiqiang.com/blog/qt-parent-children-relationship/</link>
       <pubDate>Sun, 02 Aug 2020 18:50:04 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/qt-parent-children-relationship/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/qt-parent-children-relationship/</guid>
       <description>QT 中 parent-children 关系</description>
     </item>
     
     <item>
       <title>QDockWidget</title>
-      <link>https://zqding.com/blog/qdockwidget/</link>
+      <link>https://www.dingzhiqiang.com/blog/qdockwidget/</link>
       <pubDate>Sun, 26 Jul 2020 13:31:10 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/qdockwidget/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/qdockwidget/</guid>
       <description>Dockable palette</description>
     </item>
     
     <item>
       <title>Three.js</title>
-      <link>https://zqding.com/blog/three.js/</link>
+      <link>https://www.dingzhiqiang.com/blog/three.js/</link>
       <pubDate>Sun, 19 Jul 2020 18:06:27 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/three.js/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/three.js/</guid>
       <description>https://threejs.org/</description>
     </item>
     
     <item>
       <title>QLayout</title>
-      <link>https://zqding.com/blog/qlayout/</link>
+      <link>https://www.dingzhiqiang.com/blog/qlayout/</link>
       <pubDate>Sun, 19 Jul 2020 18:04:23 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/qlayout/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/qlayout/</guid>
       <description> QLayout QHBoxLayout QVBoxLayout QGridLayout QFormLayout </description>
     </item>
     
     <item>
       <title>HOOPS</title>
-      <link>https://zqding.com/blog/hoops/</link>
+      <link>https://www.dingzhiqiang.com/blog/hoops/</link>
       <pubDate>Wed, 15 Jul 2020 07:35:12 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/hoops/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/hoops/</guid>
       <description>HOOPS/ACIS</description>
     </item>
     
     <item>
       <title>Transifex</title>
-      <link>https://zqding.com/blog/transifex/</link>
+      <link>https://www.dingzhiqiang.com/blog/transifex/</link>
       <pubDate>Sun, 12 Jul 2020 22:55:09 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/transifex/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/transifex/</guid>
       <description>Transifex translation service</description>
     </item>
     
     <item>
       <title>Catia</title>
-      <link>https://zqding.com/blog/catia/</link>
+      <link>https://www.dingzhiqiang.com/blog/catia/</link>
       <pubDate>Sun, 12 Jul 2020 22:37:40 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/catia/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/catia/</guid>
       <description>Catia</description>
     </item>
     
     <item>
       <title>Civil3D</title>
-      <link>https://zqding.com/blog/civil3d/</link>
+      <link>https://www.dingzhiqiang.com/blog/civil3d/</link>
       <pubDate>Sun, 12 Jul 2020 22:36:37 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/civil3d/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/civil3d/</guid>
       <description>Civil3D</description>
     </item>
     
     <item>
       <title>Coin3D</title>
-      <link>https://zqding.com/blog/coin3d/</link>
+      <link>https://www.dingzhiqiang.com/blog/coin3d/</link>
       <pubDate>Sun, 12 Jul 2020 22:32:39 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/coin3d/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/coin3d/</guid>
       <description>https://github.com/coin3d/coin</description>
     </item>
     
     <item>
       <title>ORGE3D</title>
-      <link>https://zqding.com/blog/orge3d/</link>
+      <link>https://www.dingzhiqiang.com/blog/orge3d/</link>
       <pubDate>Sun, 12 Jul 2020 22:31:01 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/orge3d/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/orge3d/</guid>
       <description>https://www.ogre3d.org/</description>
     </item>
     
     <item>
       <title>Open Inventor</title>
-      <link>https://zqding.com/blog/open-inventor/</link>
+      <link>https://www.dingzhiqiang.com/blog/open-inventor/</link>
       <pubDate>Sun, 12 Jul 2020 22:28:51 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/open-inventor/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/open-inventor/</guid>
       <description>https://www.openinventor.com/en</description>
     </item>
     
     <item>
       <title>Go module</title>
-      <link>https://zqding.com/blog/go-module/</link>
+      <link>https://www.dingzhiqiang.com/blog/go-module/</link>
       <pubDate>Mon, 06 Jul 2020 21:58:51 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/go-module/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/go-module/</guid>
       <description>Golang module</description>
     </item>
     
     <item>
       <title>boost</title>
-      <link>https://zqding.com/blog/boost/</link>
+      <link>https://www.dingzhiqiang.com/blog/boost/</link>
       <pubDate>Mon, 22 Jun 2020 23:19:31 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/boost/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/boost/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nuget</title>
-      <link>https://zqding.com/blog/nuget/</link>
+      <link>https://www.dingzhiqiang.com/blog/nuget/</link>
       <pubDate>Sat, 20 Jun 2020 21:52:08 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/nuget/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/nuget/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MariaDB</title>
-      <link>https://zqding.com/blog/mariadb/</link>
+      <link>https://www.dingzhiqiang.com/blog/mariadb/</link>
       <pubDate>Sat, 20 Jun 2020 21:49:58 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/mariadb/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/mariadb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>std::forward_list</title>
-      <link>https://zqding.com/blog/stdforward_list/</link>
+      <link>https://www.dingzhiqiang.com/blog/stdforward_list/</link>
       <pubDate>Sat, 20 Jun 2020 21:48:41 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/stdforward_list/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/stdforward_list/</guid>
       <description></description>
     </item>
     
     <item>
       <title>std::array</title>
-      <link>https://zqding.com/blog/stdarray/</link>
+      <link>https://www.dingzhiqiang.com/blog/stdarray/</link>
       <pubDate>Sat, 20 Jun 2020 21:45:43 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/stdarray/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/stdarray/</guid>
       <description>std::array</description>
     </item>
     
     <item>
       <title>std::bind</title>
-      <link>https://zqding.com/blog/stdbind/</link>
+      <link>https://www.dingzhiqiang.com/blog/stdbind/</link>
       <pubDate>Sat, 20 Jun 2020 21:44:11 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/stdbind/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/stdbind/</guid>
       <description>std::bind</description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://zqding.com/blog/docker/</link>
+      <link>https://www.dingzhiqiang.com/blog/docker/</link>
       <pubDate>Fri, 19 Jun 2020 14:28:31 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/docker/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/docker/</guid>
       <description>I like Docker</description>
     </item>
     
     <item>
       <title>VIM</title>
-      <link>https://zqding.com/blog/vim/</link>
+      <link>https://www.dingzhiqiang.com/blog/vim/</link>
       <pubDate>Wed, 03 Jun 2020 00:02:57 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/vim/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lambda表达式</title>
-      <link>https://zqding.com/blog/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+      <link>https://www.dingzhiqiang.com/blog/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
       <pubDate>Wed, 03 Jun 2020 00:02:08 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LINQ</title>
-      <link>https://zqding.com/blog/linq/</link>
+      <link>https://www.dingzhiqiang.com/blog/linq/</link>
       <pubDate>Mon, 01 Jun 2020 00:26:54 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/linq/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/linq/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Regex</title>
-      <link>https://zqding.com/blog/regex/</link>
+      <link>https://www.dingzhiqiang.com/blog/regex/</link>
       <pubDate>Mon, 01 Jun 2020 00:26:12 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/regex/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/regex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C&#43;&#43; Ranges</title>
-      <link>https://zqding.com/blog/c-ranges/</link>
+      <link>https://www.dingzhiqiang.com/blog/c-ranges/</link>
       <pubDate>Mon, 01 Jun 2020 00:25:21 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/c-ranges/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/c-ranges/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://zqding.com/blog/linux/</link>
+      <link>https://www.dingzhiqiang.com/blog/linux/</link>
       <pubDate>Mon, 01 Jun 2020 00:24:30 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/linux/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/linux/</guid>
       <description>Linux is interesting</description>
     </item>
     
     <item>
       <title>Excel Libraries</title>
-      <link>https://zqding.com/blog/excel-libraries/</link>
+      <link>https://www.dingzhiqiang.com/blog/excel-libraries/</link>
       <pubDate>Mon, 01 Jun 2020 00:11:09 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/excel-libraries/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/excel-libraries/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NUnitLite</title>
-      <link>https://zqding.com/blog/nunitlite/</link>
+      <link>https://www.dingzhiqiang.com/blog/nunitlite/</link>
       <pubDate>Sun, 24 May 2020 08:56:17 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/nunitlite/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/nunitlite/</guid>
       <description>NUnitLite</description>
     </item>
     
     <item>
       <title>std::type_index</title>
-      <link>https://zqding.com/blog/stdtype_index/</link>
+      <link>https://www.dingzhiqiang.com/blog/stdtype_index/</link>
       <pubDate>Sun, 24 May 2020 08:53:18 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/stdtype_index/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/stdtype_index/</guid>
       <description>std::type_index typeid</description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>https://zqding.com/blog/markdown/</link>
+      <link>https://www.dingzhiqiang.com/blog/markdown/</link>
       <pubDate>Sun, 24 May 2020 08:52:13 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/markdown/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/markdown/</guid>
       <description>Markdown</description>
     </item>
     
     <item>
       <title>FeatureToggle</title>
-      <link>https://zqding.com/blog/featuretoggle/</link>
+      <link>https://www.dingzhiqiang.com/blog/featuretoggle/</link>
       <pubDate>Sun, 24 May 2020 08:47:45 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/featuretoggle/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/featuretoggle/</guid>
       <description>FeatureToggles</description>
     </item>
     
     <item>
       <title>TCL</title>
-      <link>https://zqding.com/blog/tcl/</link>
+      <link>https://www.dingzhiqiang.com/blog/tcl/</link>
       <pubDate>Sun, 24 May 2020 08:43:51 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/tcl/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/tcl/</guid>
       <description>TCL语言</description>
     </item>
     
     <item>
       <title>std::function</title>
-      <link>https://zqding.com/blog/stdfunction/</link>
+      <link>https://www.dingzhiqiang.com/blog/stdfunction/</link>
       <pubDate>Tue, 19 May 2020 23:42:45 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/stdfunction/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/stdfunction/</guid>
       <description>std::function</description>
     </item>
     
     <item>
       <title>VTK</title>
-      <link>https://zqding.com/blog/vtk/</link>
+      <link>https://www.dingzhiqiang.com/blog/vtk/</link>
       <pubDate>Sun, 03 May 2020 09:32:50 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/vtk/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/vtk/</guid>
       <description>VTK is good</description>
     </item>
     
     <item>
       <title>OpenCascade</title>
-      <link>https://zqding.com/blog/opencascade/</link>
+      <link>https://www.dingzhiqiang.com/blog/opencascade/</link>
       <pubDate>Mon, 27 Apr 2020 22:30:12 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/opencascade/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/opencascade/</guid>
       <description>Open Cascade</description>
     </item>
     
     <item>
       <title>Fyne</title>
-      <link>https://zqding.com/blog/fyne/</link>
+      <link>https://www.dingzhiqiang.com/blog/fyne/</link>
       <pubDate>Sat, 11 Apr 2020 21:44:02 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/fyne/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/fyne/</guid>
       <description>Fyne
 https://fyne.io/ Go语言的跨平台GUI库</description>
     </item>
     
     <item>
       <title>Golang</title>
-      <link>https://zqding.com/blog/golang/</link>
+      <link>https://www.dingzhiqiang.com/blog/golang/</link>
       <pubDate>Sun, 05 Apr 2020 11:29:03 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/golang/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/golang/</guid>
       <description>Go = Golang</description>
     </item>
     
     <item>
       <title>Serverless</title>
-      <link>https://zqding.com/blog/serverless/</link>
+      <link>https://www.dingzhiqiang.com/blog/serverless/</link>
       <pubDate>Sun, 29 Mar 2020 11:26:51 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/serverless/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/serverless/</guid>
       <description>研究ASW和腾讯云的Serverless</description>
     </item>
     
     <item>
       <title>SIFT</title>
-      <link>https://zqding.com/blog/sift/</link>
+      <link>https://www.dingzhiqiang.com/blog/sift/</link>
       <pubDate>Sat, 21 Mar 2020 21:10:07 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/sift/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/sift/</guid>
       <description>SIFT是非常重要的一个CV算法</description>
     </item>
     
     <item>
       <title>Dynamo</title>
-      <link>https://zqding.com/blog/dynamo/</link>
+      <link>https://www.dingzhiqiang.com/blog/dynamo/</link>
       <pubDate>Sat, 14 Mar 2020 12:53:32 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/dynamo/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/dynamo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Electron</title>
-      <link>https://zqding.com/blog/electron/</link>
+      <link>https://www.dingzhiqiang.com/blog/electron/</link>
       <pubDate>Sat, 14 Mar 2020 12:52:40 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/electron/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/electron/</guid>
       <description></description>
     </item>
     
     <item>
       <title>QML</title>
-      <link>https://zqding.com/blog/qml/</link>
+      <link>https://www.dingzhiqiang.com/blog/qml/</link>
       <pubDate>Sat, 14 Mar 2020 12:51:50 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/qml/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/qml/</guid>
       <description>QT QML</description>
     </item>
     
     <item>
       <title>Revit</title>
-      <link>https://zqding.com/blog/revit/</link>
+      <link>https://www.dingzhiqiang.com/blog/revit/</link>
       <pubDate>Sat, 14 Mar 2020 12:49:03 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/revit/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/revit/</guid>
       <description>Revit 非常有用。</description>
     </item>
     
     <item>
       <title>Notion</title>
-      <link>https://zqding.com/blog/notion/</link>
+      <link>https://www.dingzhiqiang.com/blog/notion/</link>
       <pubDate>Sun, 01 Mar 2020 09:53:11 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/notion/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/notion/</guid>
       <description>现在的资料管理软件，类似Evernote，以前用过不觉得怎么样。昨天又用了一下，这才感觉Markdown编辑真的非常方便</description>
     </item>
     
     <item>
       <title>在线教育</title>
-      <link>https://zqding.com/blog/%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2/</link>
+      <link>https://www.dingzhiqiang.com/blog/%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2/</link>
       <pubDate>Sun, 01 Mar 2020 09:40:54 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ML.NET</title>
-      <link>https://zqding.com/blog/ml.net/</link>
+      <link>https://www.dingzhiqiang.com/blog/ml.net/</link>
       <pubDate>Sun, 16 Feb 2020 00:09:37 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/ml.net/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/ml.net/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hyper</title>
-      <link>https://zqding.com/blog/hyper/</link>
+      <link>https://www.dingzhiqiang.com/blog/hyper/</link>
       <pubDate>Sat, 15 Feb 2020 23:55:28 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/hyper/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/hyper/</guid>
       <description>一个新的command line工具，功能比较简单，但是样子比较好看，比Cmder好看多了
 https://hyper.is/
 有一个好的地方是Hyper可以集成Cmder，也就是说功能都是Cmder的，而界面都是Hyper的样子，这个非常推荐。 </description>
@@ -753,182 +753,182 @@ https://hyper.is/
     
     <item>
       <title>SAAS</title>
-      <link>https://zqding.com/blog/saas/</link>
+      <link>https://www.dingzhiqiang.com/blog/saas/</link>
       <pubDate>Sun, 09 Feb 2020 23:36:49 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/saas/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/saas/</guid>
       <description>家装SAAS</description>
     </item>
     
     <item>
       <title>NET Core</title>
-      <link>https://zqding.com/blog/net-core/</link>
+      <link>https://www.dingzhiqiang.com/blog/net-core/</link>
       <pubDate>Wed, 29 Jan 2020 13:44:32 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/net-core/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/net-core/</guid>
       <description>C#非常好</description>
     </item>
     
     <item>
       <title>AEC</title>
-      <link>https://zqding.com/blog/aec/</link>
+      <link>https://www.dingzhiqiang.com/blog/aec/</link>
       <pubDate>Wed, 29 Jan 2020 13:30:45 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/aec/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/aec/</guid>
       <description>The AEC industry consists of separate players &amp;ndash; architecture, engineering and construction &amp;ndash; that work together to bring a project to fruition. By integrating these seemingly separate entities into a single industry, architects, engineers and contractors can work more efficiently to achieve a common goal. The AEC industry has several practical applications that facilitate the technology, outsourcing and exchange of information within the industry.
 Three in One The fact that three different but related industries make up the AEC industry complicates industry standards.</description>
     </item>
     
     <item>
       <title>OpenCV</title>
-      <link>https://zqding.com/blog/opencv/</link>
+      <link>https://www.dingzhiqiang.com/blog/opencv/</link>
       <pubDate>Wed, 29 Jan 2020 13:23:50 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/opencv/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/opencv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spike和Spark</title>
-      <link>https://zqding.com/blog/spike%E5%92%8Cspark/</link>
+      <link>https://www.dingzhiqiang.com/blog/spike%E5%92%8Cspark/</link>
       <pubDate>Fri, 03 Jan 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/spike%E5%92%8Cspark/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/spike%E5%92%8Cspark/</guid>
       <description>本来一直用Spark，最近发现了Spike这个App，用下来感觉很不错，以后可能都切换到Spike了。 Spark也是非常好，但是有时候，不知道什么原因，就是无法打开正文内容，即使我看到了标题，就是看不到正文，翻墙也不行，体验非常的差。</description>
     </item>
     
     <item>
       <title>智能指针</title>
-      <link>https://zqding.com/blog/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</link>
+      <link>https://www.dingzhiqiang.com/blog/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</link>
       <pubDate>Wed, 01 Jan 2020 08:39:22 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jenkins</title>
-      <link>https://zqding.com/blog/jenkins/</link>
+      <link>https://www.dingzhiqiang.com/blog/jenkins/</link>
       <pubDate>Wed, 01 Jan 2020 08:37:57 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/jenkins/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/jenkins/</guid>
       <description></description>
     </item>
     
     <item>
       <title>2020</title>
-      <link>https://zqding.com/blog/2020/</link>
+      <link>https://www.dingzhiqiang.com/blog/2020/</link>
       <pubDate>Wed, 01 Jan 2020 08:00:16 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/2020/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/2020/</guid>
       <description>2020需要做出更大的成绩来。</description>
     </item>
     
     <item>
       <title>GTD</title>
-      <link>https://zqding.com/blog/gtd/</link>
+      <link>https://www.dingzhiqiang.com/blog/gtd/</link>
       <pubDate>Sat, 28 Dec 2019 13:25:41 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/gtd/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/gtd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ArcGIS</title>
-      <link>https://zqding.com/blog/arcgis/</link>
+      <link>https://www.dingzhiqiang.com/blog/arcgis/</link>
       <pubDate>Sat, 28 Dec 2019 13:20:43 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/arcgis/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/arcgis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C&#43;&#43;11</title>
-      <link>https://zqding.com/blog/c-11/</link>
+      <link>https://www.dingzhiqiang.com/blog/c-11/</link>
       <pubDate>Sat, 28 Dec 2019 13:17:37 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/c-11/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/c-11/</guid>
       <description>已经很久以前了</description>
     </item>
     
     <item>
       <title>Everything</title>
-      <link>https://zqding.com/blog/everything/</link>
+      <link>https://www.dingzhiqiang.com/blog/everything/</link>
       <pubDate>Sat, 28 Dec 2019 13:16:06 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/everything/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/everything/</guid>
       <description>任何电脑都要装的神器</description>
     </item>
     
     <item>
       <title>Cmake</title>
-      <link>https://zqding.com/blog/cmake/</link>
+      <link>https://www.dingzhiqiang.com/blog/cmake/</link>
       <pubDate>Tue, 24 Dec 2019 23:01:48 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/cmake/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/cmake/</guid>
       <description>经常用到</description>
     </item>
     
     <item>
       <title>Unity</title>
-      <link>https://zqding.com/blog/unity/</link>
+      <link>https://www.dingzhiqiang.com/blog/unity/</link>
       <pubDate>Sun, 22 Dec 2019 10:53:14 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/unity/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/unity/</guid>
       <description>Unity是一个完整的商业游戏引擎，可以根据一套代码发布到不同的平台，而且他是用C#来写的，用起来特别的简单。最近Unity开始跟Autodesk合作在建筑领域里投入了，很值得学习一下。</description>
     </item>
     
     <item>
       <title>Cocos</title>
-      <link>https://zqding.com/blog/cocos/</link>
+      <link>https://www.dingzhiqiang.com/blog/cocos/</link>
       <pubDate>Sun, 22 Dec 2019 10:50:49 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/cocos/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/cocos/</guid>
       <description>以前特别喜欢Cocos，研究过很长一段时间，也做了几个Cocos的游戏发布，后面也没什么反响，也就逐渐不研究了。</description>
     </item>
     
     <item>
       <title>AWS</title>
-      <link>https://zqding.com/blog/aws/</link>
+      <link>https://www.dingzhiqiang.com/blog/aws/</link>
       <pubDate>Mon, 16 Dec 2019 23:00:32 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/aws/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/aws/</guid>
       <description>一天的AWS技术分享，因为没有多少实战经验，其实很难听得懂。</description>
     </item>
     
     <item>
       <title>BIM</title>
-      <link>https://zqding.com/blog/bim/</link>
+      <link>https://www.dingzhiqiang.com/blog/bim/</link>
       <pubDate>Sun, 15 Dec 2019 11:44:36 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/bim/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/bim/</guid>
       <description>BIM BIM</description>
     </item>
     
     <item>
       <title>GIS</title>
-      <link>https://zqding.com/blog/gis/</link>
+      <link>https://www.dingzhiqiang.com/blog/gis/</link>
       <pubDate>Sun, 15 Dec 2019 11:27:07 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/gis/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/gis/</guid>
       <description>研究一下</description>
     </item>
     
     <item>
       <title>Clever F</title>
-      <link>https://zqding.com/blog/clever-f/</link>
+      <link>https://www.dingzhiqiang.com/blog/clever-f/</link>
       <pubDate>Fri, 13 Dec 2019 23:36:02 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/clever-f/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/clever-f/</guid>
       <description>增强的f命令的VIM插件</description>
     </item>
     
     <item>
       <title>KnowRoaming电话卡</title>
-      <link>https://zqding.com/blog/knowroaming%E7%94%B5%E8%AF%9D%E5%8D%A1/</link>
+      <link>https://www.dingzhiqiang.com/blog/knowroaming%E7%94%B5%E8%AF%9D%E5%8D%A1/</link>
       <pubDate>Fri, 13 Dec 2019 23:32:50 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/knowroaming%E7%94%B5%E8%AF%9D%E5%8D%A1/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/knowroaming%E7%94%B5%E8%AF%9D%E5%8D%A1/</guid>
       <description>以前用过一段时间的Lycamobile的卡，没有月租费，在中国可以收短信，卡基本不要钱，Amazon上面一美元，TB上也就是20块。但是刚激活一段时间，充了一笔钱，Lycamobile就改变政策，不买套餐在中国不能用了。
 前两天在Youtube上看到有个人介绍现在有什么便宜的可以在中国用的电话卡，提到了KnowRoaming这张卡，看了一下介绍我就也买了一张。至于为什么要一个美国卡号，每个人有不同的原因吧，我只是预备着，万一要用到美国的一些服务，可能需要美国卡号。现在知道的是Azure激活需要美国卡号，Google Voice要关联一个美国卡号，Wechat Out也需要美国卡号。因为持有的成本不高，管他有没有用，先办一张再说。
 官网下单，好像是9.99没有，送到中国要运费6美元。卡是从香港寄过来的，大概四五天就收到了。 看过一些评论，说是要每9个月充值一次，不然余额就会清零，不清楚一直不充值卡号会不会保留，先用9个月再说，实在要充值到了9个月再说。
@@ -937,47 +937,47 @@ App上内容也比较简单清晰，主要就是费用，费率，余额之类�
     
     <item>
       <title>HHKB</title>
-      <link>https://zqding.com/blog/hhkb/</link>
+      <link>https://www.dingzhiqiang.com/blog/hhkb/</link>
       <pubDate>Sun, 08 Dec 2019 17:06:47 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/hhkb/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/hhkb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Filco</title>
-      <link>https://zqding.com/blog/filco/</link>
+      <link>https://www.dingzhiqiang.com/blog/filco/</link>
       <pubDate>Sun, 08 Dec 2019 16:59:51 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/filco/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/filco/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jira</title>
-      <link>https://zqding.com/blog/jira/</link>
+      <link>https://www.dingzhiqiang.com/blog/jira/</link>
       <pubDate>Thu, 05 Dec 2019 23:32:46 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/jira/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/jira/</guid>
       <description>Jira应用广泛，值得研究一下 </description>
     </item>
     
     <item>
       <title>OSG</title>
-      <link>https://zqding.com/blog/osg/</link>
+      <link>https://www.dingzhiqiang.com/blog/osg/</link>
       <pubDate>Tue, 03 Dec 2019 22:29:26 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/osg/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/osg/</guid>
       <description>OpenSceneGraph是一个开源的三维引擎，被广泛的应用在可视化仿真、游戏、虚拟现实、科学计算、三维重建、地理信息、太空探索、石油矿产等领域。OSG采用标准C++和OpenGL编写而成，可运行在所有的Windows平台、OSX、GNU/Linux、IRIX、Solaris、HP-Ux、AIX、Android和FreeBSD 操作系统。OSG在各个行业均有着丰富的扩展，能够与使用OpenGL书写的引擎无缝的结合，使用国际上最先进的图形渲染技术，让每个用户都能站在巨人的肩上。
 http://www.osgchina.org/ http://www.openscenegraph.org/</description>
     </item>
     
     <item>
       <title>QT</title>
-      <link>https://zqding.com/blog/qt/</link>
+      <link>https://www.dingzhiqiang.com/blog/qt/</link>
       <pubDate>Tue, 03 Dec 2019 22:27:06 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/qt/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/qt/</guid>
       <description>我对QT的理解是一个跨平台的C++ UI库，功能类似Windows平台的MFC。QT最初由一个小公司开发，后面被诺基亚收购，再后来诺基亚自己不行了QT自己独立出来成立公司运作QT这个产品。
 我使用QT并不多，也没真正的深入使用QT完成什么软件。只知道公司已经有多个大规模产品使用QT来开发，自己写的几个QT小程序，开发过程确实比较简单，而且提供了大量的基础类，常见功能的类都能找到。
 QT最大的好处是跨平台，这也意味着如果你的产品是准备多平台发布的，那么可能QT就是一个很好的选择，MFC只能局限在Windows平台。最近很火的区块链客户端，很多就是用QT开发的。
@@ -987,10 +987,10 @@ QT是需要付费的，只是企业级的使用是需要买企业license的，�
     
     <item>
       <title>ClipX</title>
-      <link>https://zqding.com/blog/clipx/</link>
+      <link>https://www.dingzhiqiang.com/blog/clipx/</link>
       <pubDate>Tue, 03 Dec 2019 22:24:47 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/clipx/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/clipx/</guid>
       <description>这是一个剪切板辅助软件，他可以记录多个Copy内容，最多能支持100个entries。我经常的Copy不同的文本和图片，而且很快就会有要弄到，如果只是用Windows默认的剪切板，效率实在太低了。
 这是我任何一台电脑都必装的软件。现在也有一些功能更复杂的类似的软件，但是我一直用惯了这一个，也非常的稳定非常的好用，完全能满足我的需要。
 这个软件已经不继续开发了，很久以前就不开发了，最新的版本固定在1.0.3.8，开发的时间是2005，距今15年左右了。
@@ -1002,10 +1002,10 @@ QT是需要付费的，只是企业级的使用是需要买企业license的，�
     
     <item>
       <title>Mailbird</title>
-      <link>https://zqding.com/blog/mailbird/</link>
+      <link>https://www.dingzhiqiang.com/blog/mailbird/</link>
       <pubDate>Tue, 03 Dec 2019 22:05:50 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/mailbird/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/mailbird/</guid>
       <description>我至今还是非常喜欢邮件这种工具，当然了也不排斥Slack这样的新工具。
 邮件的桌面客户端，我试用过很多。 Windows平台上用过下面的这些。
 Outlook 公司里必备软件，跟Visual Studio一样的地位，只要装新电脑就一定要装。功能完整强大，编辑起来follow office的习惯，很好的软件。但是就是感觉太大了。我有Office 365的订阅，可以免费使用Office，在家里感觉个人那一点点邮件也用不上Outlook。
@@ -1017,10 +1017,10 @@ Mailbird 这是我最近几年一直到现在一直用的软件。我最喜欢�
     
     <item>
       <title>Cmder</title>
-      <link>https://zqding.com/blog/cmder/</link>
+      <link>https://www.dingzhiqiang.com/blog/cmder/</link>
       <pubDate>Tue, 03 Dec 2019 07:20:43 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/cmder/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/cmder/</guid>
       <description>Cmder是Windows下非常好用的终端模拟器， 常用于替换windows自带的终端。它可以在不同的标签页中同时连接不同的底层Shell，包括cmd、PowerShell、Bash和WSL，并提供相关增强功能和更加便捷的操作方式，这也正是它被大家称作为Windows下的神器的原因。(前面这段是抄来的。。)
 Cmder确实是Windows下面的神器，至少对于开发人员来说肯定是的。这已经是我每天时时刻刻都在用的软件了。
 对于我来说，主要下面几个feature比较有用：
@@ -1036,20 +1036,20 @@ Cmder确实是Windows下面的神器，至少对于开发人员来说肯定是�
     
     <item>
       <title>Z jump</title>
-      <link>https://zqding.com/blog/z-jump/</link>
+      <link>https://www.dingzhiqiang.com/blog/z-jump/</link>
       <pubDate>Tue, 03 Dec 2019 07:16:57 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/z-jump/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/z-jump/</guid>
       <description>Linux上面有一个很方便的工具，可以通过z 加路径名字快速跳转过去。我们这里说的z jump就是类似的东西，支持Windows （cmder），linux和MacOS。 https://github.com/skywind3000/z.lua
 原理应该也很简单，就是把你每次cd的路径记录下来，然后排序。然后当你输入“z 关键字”的时候，去查前面记录下来的信息，找到一个最匹配的项直接跳转过去。虽然很简单，但是却非常的有用，我每天都用，基本上是我必备的工具了。</description>
     </item>
     
     <item>
       <title>Listary</title>
-      <link>https://zqding.com/blog/listary/</link>
+      <link>https://www.dingzhiqiang.com/blog/listary/</link>
       <pubDate>Tue, 03 Dec 2019 07:15:45 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/listary/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/listary/</guid>
       <description>Listary非常的有名，很多地方都能看到介绍。做活动的时候也不贵，几十块钱，我也买了一个license。
 我平时用的不多，只是当成Everything的替代品来用。他的功能比Everything多，也正是比Everything功能多，也复杂，我大部分时间还是用更纯粹的Everything。 Listary令我印象深刻的是他能通过两次Ctrl键调起来，这个好像是Mac里面的操作，我一直没找到怎么能设置成这种调用方法。现在Everything我是设置成F4作为快捷键，也很方便。
 相比Everything，Listary也就是多了菜单里的这些内容。 另外的功能可以从Options对话框中找到 另一个有用的功能，我把翻译预定义了，然后要查字典的时候，输入 fy abc 这样的就能自动去翻译了，也比较方便。 除此之外，他能够在某些特定的application中启用快速查找，但是我并不喜欢这个功能。我特意关掉了所有application，结果还是有些程序会跳出Listary的菜单，看起来很烦的。</description>
@@ -1057,10 +1057,10 @@ Cmder确实是Windows下面的神器，至少对于开发人员来说肯定是�
     
     <item>
       <title>Hub Github操作命令行工具</title>
-      <link>https://zqding.com/blog/hub-github%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</link>
+      <link>https://www.dingzhiqiang.com/blog/hub-github%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Mon, 02 Dec 2019 22:37:33 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/hub-github%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/hub-github%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</guid>
       <description>Git现在是我每天用的最多的软件了，跟Visual Studio一样，每天都在用，时时刻刻都在用。Github也是每天都打交道的网站，commit，pr，review，merge，search，每天做这些。
 Hub 就是一款Github的命令行操作工具，支持普通的Github跟Github Enterprise，非常的方便，很多操作比在网页上操作要方便的多。 (https://hub.github.com/)
 Hub也支持大部分的Git命令，管网上推荐用Hub来代替Git的功能，同时又提供了Github的操作功能。 当然了，我主要用到的是Github操作相关的部分命令： 这些Github命令，跟Cmder的命令结合到一起，能组合成很方便的功能，比如我写了一个命令 listmypr，可以把当前Open状态的Assignee是我的pr都列出来，这样的话，每天下班前，我只要跑一下命令就能知道我还有没有PR pending在那里，需不需要去处理一下。 </description>
@@ -1068,10 +1068,10 @@ Hub也支持大部分的Git命令，管网上推荐用Hub来代替Git的功能�
     
     <item>
       <title>Sharex</title>
-      <link>https://zqding.com/blog/sharex/</link>
+      <link>https://www.dingzhiqiang.com/blog/sharex/</link>
       <pubDate>Mon, 02 Dec 2019 00:17:57 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/sharex/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/sharex/</guid>
       <description>首先要介绍一下Blog过程中经常会用到的截图工具。除了Blog，我在邮件和Jira中也经常的用到截图功能。一个第三方的截图工具是非常的必要的。我看过最特别的截图过程是，先PrintScreen，然后启动MSPaint，然后paste，然后挖一块出来，工作效率可想而知。我看到的另一个奇葩的用法是，为了这个截图功能，就在公司电脑装上QQ，就是为了能方便的截图。
 在ShareX之前，我一直用的是Greenshot，也非常的好用，也是一个开源软件，我还给作者捐了10刀。Greenshot的缺点是没有一个好的编辑器，简单用来截图也是非常好用的。
 主界面
@@ -1087,10 +1087,10 @@ About
     
     <item>
       <title>我的博客</title>
-      <link>https://zqding.com/blog/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://www.dingzhiqiang.com/blog/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sun, 01 Dec 2019 23:51:59 +0800</pubDate>
       
-      <guid>https://zqding.com/blog/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://www.dingzhiqiang.com/blog/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
       <description>一直想有一个自己的博客，一直因为种种麻烦没去弄（其实并不麻烦）。终于下定决心放在github上面，并不需要有什么人来看，只是想记录一下自己的生活。Github短期内应该不会垮掉吧。。。
 接下来，看看能不能坚持下来，每周至少有一篇的更新，不管什么内容，总要坚持更新。
 我能想到的一些内容：
