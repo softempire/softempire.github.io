@@ -90,6 +90,11 @@ a:hover {
 
 /* post */
 
+#article > .row > [class*="col-"] {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 600px) {
   .site-header {
     display: none;
