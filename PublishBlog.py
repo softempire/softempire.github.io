@@ -16,6 +16,8 @@ PublishBlog.py - 一键发布博客文章
 import os
 import re
 import sys
+import shutil
+import uuid
 import subprocess
 from datetime import datetime
 
@@ -387,6 +389,60 @@ def find_unpublished_posts():
     return unpublished
 
 
+def process_images(post_name, md_path):
+    """处理文章中的图片：将 content/post/ 下的本地图片重命名并复制到 images/ 目录，更新 md 引用"""
+    post_dir = os.path.dirname(md_path)
+    images_dir = os.path.join(SCRIPT_DIR, 'images')
+    os.makedirs(images_dir, exist_ok=True)
+
+    with open(md_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    IMAGE_EXTS = ('.png', '.jpg', '.jpeg', '.gif', '.bmp', '.webp', '.svg')
+    modified = False
+
+    # 匹配 markdown 图片语法 ![alt](path)
+    def replace_image(match):
+        nonlocal modified
+        alt = match.group(1)
+        img_path = match.group(2)
+
+        # 跳过已经是 /images/ 开头的或者 http 开头的远程图片
+        if img_path.startswith('/images/') or img_path.startswith('http'):
+            return match.group(0)
+
+        # 获取图片文件的完整路径
+        full_img_path = os.path.join(post_dir, img_path)
+        if not os.path.exists(full_img_path):
+            print(f"  警告: 图片文件不存在 {full_img_path}，跳过")
+            return match.group(0)
+
+        # 生成随机文件名，保留原始扩展名
+        ext = os.path.splitext(img_path)[1].lower()
+        if ext not in IMAGE_EXTS:
+            return match.group(0)
+
+        random_name = uuid.uuid4().hex[:12] + ext
+        dest_path = os.path.join(images_dir, random_name)
+
+        # 复制图片到 images/ 目录
+        shutil.copy2(full_img_path, dest_path)
+        print(f"  图片: {img_path} -> /images/{random_name}")
+
+        # 删除原始图片文件
+        os.remove(full_img_path)
+
+        modified = True
+        return f'![{alt}](/images/{random_name})'
+
+    new_content = re.sub(r'!\[(.*?)\]\((.*?)\)', replace_image, content)
+
+    if modified:
+        with open(md_path, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+        print(f"  已更新 {post_name}.md 中的图片引用")
+
+
 def publish_post(post_name):
     """发布单篇文章"""
     md_path = os.path.join(SCRIPT_DIR, 'content', 'post', f'{post_name}.md')
@@ -396,7 +452,10 @@ def publish_post(post_name):
 
     print(f"\n========== 发布文章: {post_name} ==========")
 
-    # 1. 解析 Markdown
+    # 1. 处理图片：重命名并复制到 images/ 目录
+    process_images(post_name, md_path)
+
+    # 2. 解析 Markdown
     meta, body = parse_markdown(md_path)
     if meta is None:
         return False
@@ -416,17 +475,17 @@ def publish_post(post_name):
     dt = parse_date(date_str) if date_str else datetime.now()
     slug = post_name.lower()
 
-    # 2. 转换 Markdown 为 HTML
+    # 3. 转换 Markdown 为 HTML
     content_html = markdown_to_html(body)
 
     # 取正文第一行作为 description
     first_line = body.split('\n')[0].strip() if body else title
     description = first_line[:200]
 
-    # 3. 生成博客页面
+    # 4. 生成博客页面
     create_blog_page(slug, title, dt, content_html, description)
 
-    # 4. 更新 index.html 列表
+    # 5. 更新 index.html 列表
     update_index_html(slug, title, dt)
 
     return True
