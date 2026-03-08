@@ -1,0 +1,440 @@
+"""
+PublishBlog.py - 一键发布博客文章
+
+用法:
+    python PublishBlog.py <post文件名(不带.md后缀)>
+
+示例:
+    python PublishBlog.py AI
+    python PublishBlog.py Antigravity
+
+功能:
+    1. 读取 content/post/<name>.md 中的 front matter 和正文
+    2. 在 blog/<name>/ 下生成 index.html 博客页面
+    3. 自动更新根目录 index.html 的文章列表
+    4. 执行 git add / commit / push 完成发布
+"""
+
+import os
+import re
+import sys
+import subprocess
+from datetime import datetime
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+os.chdir(SCRIPT_DIR)
+
+# ============================================================
+# 博客页面 HTML 模板
+# ============================================================
+BLOG_PAGE_TEMPLATE = r'''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="DingZQ" />
+  <meta property="og:url" content="https://www.dingzhiqiang.com/blog/{slug}/" />
+  <link rel="canonical" href="https://www.dingzhiqiang.com/blog/{slug}/" /><script type="application/ld+json">
+  {{
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {{
+           "@type": "WebPage",
+           "@id": "https:\/\/www.dingzhiqiang.com\/"
+      }},
+      "articleSection" : "post",
+      "name" : "{title}",
+      "headline" : "{title}",
+      "description" : "{description}",
+      "inLanguage" : "en-US",
+      "author" : "DingZQ",
+      "creator" : "DingZQ",
+      "publisher": "DingZQ",
+      "accountablePerson" : "DingZQ",
+      "copyrightHolder" : "DingZQ",
+      "copyrightYear" : "{year}",
+      "datePublished": "{date_full}",
+      "dateModified" : "{date_full}",
+      "url" : "https:\/\/www.dingzhiqiang.com\/blog\/{slug}\/",
+      "keywords" : [  ]
+  }}
+</script>
+<title>{title} - Zhiqiang&#39;s Blog</title>
+  <meta property="og:title" content="{title} - Zhiqiang&#39;s Blog" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="{description}" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Zhiqiang&#39;s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">无敌的丁苏</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">{title}</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="{date_full}">
+                {date_display}
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://www.dingzhiqiang.com/">@DingZQ</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          {content_html}
+        </div>
+        
+
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>
+'''
+
+# ============================================================
+# index.html 中的文章条目模板
+# ============================================================
+POST_ENTRY_TEMPLATE = '''
+            <div class="row post-line">
+              <div class="posts-date col-xs-2">
+                <time datetime="{date_full}">{date_short}</time>
+              </div>
+              <div class="posts-title col-xs-10">
+                <a href="/blog/{slug}/">{title}</a>
+              </div>
+            </div>
+'''
+
+# ============================================================
+# 解析 Markdown 文件
+# ============================================================
+def parse_markdown(filepath):
+    """解析 markdown 文件，返回 front matter 字典和正文内容"""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # 解析 front matter (--- ... ---)
+    fm_match = re.match(r'^---\s*\n(.*?)\n---\s*\n(.*)', content, re.DOTALL)
+    if not fm_match:
+        print(f"错误: 无法解析 {filepath} 的 front matter")
+        sys.exit(1)
+
+    fm_text = fm_match.group(1)
+    body = fm_match.group(2).strip()
+
+    # 提取 front matter 字段
+    meta = {}
+    for line in fm_text.strip().split('\n'):
+        if ':' in line:
+            key, val = line.split(':', 1)
+            meta[key.strip()] = val.strip().strip('"').strip("'")
+
+    return meta, body
+
+
+def markdown_to_html(md_text):
+    """简易 Markdown 转 HTML"""
+    lines = md_text.split('\n')
+    html_parts = []
+    in_code_block = False
+    code_lang = ''
+    code_lines = []
+
+    for line in lines:
+        # 代码块
+        if line.startswith('```'):
+            if not in_code_block:
+                in_code_block = True
+                code_lang = line[3:].strip()
+                code_lines = []
+            else:
+                in_code_block = False
+                code_content = '\n'.join(code_lines)
+                if code_lang:
+                    html_parts.append(f'<pre><code class="{code_lang}">{code_content}</code></pre>')
+                else:
+                    html_parts.append(f'<pre><code>{code_content}</code></pre>')
+            continue
+
+        if in_code_block:
+            code_lines.append(line)
+            continue
+
+        # 标题
+        if line.startswith('######'):
+            html_parts.append(f'<h6>{line[6:].strip()}</h6>')
+        elif line.startswith('#####'):
+            html_parts.append(f'<h5>{line[5:].strip()}</h5>')
+        elif line.startswith('####'):
+            html_parts.append(f'<h4>{line[4:].strip()}</h4>')
+        elif line.startswith('###'):
+            html_parts.append(f'<h3>{line[3:].strip()}</h3>')
+        elif line.startswith('##'):
+            html_parts.append(f'<h2>{line[2:].strip()}</h2>')
+        elif line.startswith('#'):
+            html_parts.append(f'<h1>{line[1:].strip()}</h1>')
+        elif line.strip() == '':
+            continue
+        elif line.startswith('- '):
+            html_parts.append(f'<li>{line[2:].strip()}</li>')
+        elif line.startswith('!['):
+            # 图片 ![alt](url)
+            img_match = re.match(r'!\[(.*?)\]\((.*?)\)', line)
+            if img_match:
+                alt, src = img_match.group(1), img_match.group(2)
+                html_parts.append(f'<img src="{src}" alt="{alt}" />')
+            else:
+                html_parts.append(f'<p>{line}</p>')
+        else:
+            # 处理行内链接 [text](url)
+            line = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2">\1</a>', line)
+            # 处理行内代码 `code`
+            line = re.sub(r'`([^`]+)`', r'<code>\1</code>', line)
+            # 粗体 **text**
+            line = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', line)
+            # 斜体 *text*
+            line = re.sub(r'\*(.*?)\*', r'<em>\1</em>', line)
+            html_parts.append(f'<p>{line}</p>')
+
+    return '\n          '.join(html_parts)
+
+
+def parse_date(date_str):
+    """解析日期字符串，返回 datetime 对象"""
+    # 处理格式: 2026-03-08T11:41:26+08:00
+    date_str = re.sub(r'([+-]\d{2}):(\d{2})$', r'\1\2', date_str)
+    try:
+        return datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%S%z')
+    except ValueError:
+        try:
+            return datetime.strptime(date_str[:19], '%Y-%m-%dT%H:%M:%S')
+        except ValueError:
+            return datetime.now()
+
+
+def update_index_html(slug, title, dt):
+    """更新 index.html，将新文章添加到对应年份的 section 中"""
+    index_path = os.path.join(SCRIPT_DIR, 'index.html')
+    with open(index_path, 'r', encoding='utf-8') as f:
+        html = f.read()
+
+    year = str(dt.year)
+    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+              'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    date_short = f"{months[dt.month - 1]} {dt.day:02d}"
+    date_full = dt.strftime('%Y-%m-%d %H:%M:%S') + ' CST'
+
+    # 检查文章是否已经在列表中
+    if f'href="/blog/{slug}/"' in html:
+        print(f"  文章 {slug} 已在 index.html 中，跳过更新列表")
+        return
+
+    new_entry = POST_ENTRY_TEMPLATE.format(
+        date_full=date_full,
+        date_short=date_short,
+        slug=slug,
+        title=title
+    )
+
+    # 检查是否已有该年份的 section
+    year_pattern = f'<h1 class="site-date-catalog">{year}</h1>'
+    if year_pattern in html:
+        # 在该年份标题后插入新条目
+        insert_pos = html.index(year_pattern) + len(year_pattern)
+        # 跳过换行和空白
+        while insert_pos < len(html) and html[insert_pos] in '\r\n \t':
+            insert_pos += 1
+        html = html[:insert_pos] + new_entry + html[insert_pos:]
+    else:
+        # 创建新的年份 section，插入到 posts-list 最前面
+        new_section = f'''          <section>
+            <h1 class="site-date-catalog">{year}</h1>
+{new_entry}
+          </section>
+'''
+        marker = '<div id="posts-list">\r\n'
+        if marker not in html:
+            marker = '<div id="posts-list">\n'
+        if marker in html:
+            insert_pos = html.index(marker) + len(marker)
+            html = html[:insert_pos] + new_section + html[insert_pos:]
+        else:
+            print("  警告: 未找到 posts-list 标记，无法更新 index.html")
+            return
+
+    with open(index_path, 'w', encoding='utf-8') as f:
+        f.write(html)
+    print(f"  已更新 index.html 列表")
+
+
+def create_blog_page(slug, title, dt, content_html, description):
+    """创建博客文章 HTML 页面"""
+    blog_dir = os.path.join(SCRIPT_DIR, 'blog', slug)
+    os.makedirs(blog_dir, exist_ok=True)
+
+    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+              'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    date_display = f"{dt.day:02d} {months[dt.month - 1]} {dt.year}"
+    date_full = dt.strftime('%Y-%m-%d %H:%M:%S') + ' +0800 CST'
+
+    page_html = BLOG_PAGE_TEMPLATE.format(
+        slug=slug,
+        title=title,
+        description=description,
+        year=dt.year,
+        date_full=date_full,
+        date_display=date_display,
+        content_html=content_html
+    )
+
+    output_path = os.path.join(blog_dir, 'index.html')
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(page_html)
+    print(f"  已生成 blog/{slug}/index.html")
+
+
+def git_publish(post_name):
+    """执行 git add, commit, push"""
+    print("\n正在提交到 GitHub...")
+    subprocess.run(['git', 'add', '.'], cwd=SCRIPT_DIR)
+    subprocess.run(['git', 'commit', '-m', f'Publish post: {post_name}'], cwd=SCRIPT_DIR)
+    result = subprocess.run(['git', 'push'], cwd=SCRIPT_DIR, capture_output=True, text=True)
+    if result.returncode == 0:
+        print("  已推送到 GitHub！稍等片刻，博客即可对外可见。")
+    else:
+        print(f"  Git push 输出: {result.stdout}{result.stderr}")
+        print("  请检查网络连接或 SSH 密钥配置。")
+
+
+def main():
+    if len(sys.argv) < 2:
+        print("用法: python PublishBlog.py <post名称>")
+        print("示例: python PublishBlog.py AI")
+        print("      python PublishBlog.py Antigravity")
+        print()
+        print("也可以一次发布多篇:")
+        print("      python PublishBlog.py AI Antigravity")
+        sys.exit(1)
+
+    post_names = sys.argv[1:]
+
+    for post_name in post_names:
+        md_path = os.path.join(SCRIPT_DIR, 'content', 'post', f'{post_name}.md')
+        if not os.path.exists(md_path):
+            print(f"错误: 找不到文件 {md_path}")
+            print(f"请先运行 CreatePost.bat {post_name} 创建文章。")
+            continue
+
+        print(f"\n========== 发布文章: {post_name} ==========")
+
+        # 1. 解析 Markdown
+        meta, body = parse_markdown(md_path)
+        title = meta.get('title', post_name)
+        date_str = meta.get('date', '')
+        draft = meta.get('draft', 'false').lower()
+
+        if draft == 'true':
+            print(f"  警告: {post_name} 标记为草稿 (draft: true)，将自动设为 false")
+            # 修改源文件
+            with open(md_path, 'r', encoding='utf-8') as f:
+                md_content = f.read()
+            md_content = md_content.replace('draft: true', 'draft: false')
+            with open(md_path, 'w', encoding='utf-8') as f:
+                f.write(md_content)
+
+        dt = parse_date(date_str) if date_str else datetime.now()
+        slug = post_name.lower()
+
+        # 2. 转换 Markdown 为 HTML
+        content_html = markdown_to_html(body)
+
+        # 取正文第一行作为 description
+        first_line = body.split('\n')[0].strip() if body else title
+        description = first_line[:200]
+
+        # 3. 生成博客页面
+        create_blog_page(slug, title, dt, content_html, description)
+
+        # 4. 更新 index.html 列表
+        update_index_html(slug, title, dt)
+
+    # 5. Git 提交并推送
+    git_publish(', '.join(post_names))
+
+    print("\n✅ 发布完成！")
+
+
+if __name__ == '__main__':
+    main()

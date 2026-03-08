@@ -4,8 +4,11 @@
     <title>Categories on Ding Zhiqiang&#39;s Blog</title>
     <link>https://www.dingzhiqiang.com/categories/</link>
     <description>Recent content in Categories on Ding Zhiqiang&#39;s Blog</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <atom:link href="https://www.dingzhiqiang.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://www.dingzhiqiang.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
   </channel>
 </rss>

@@ -34,27 +34,31 @@
    ```
    **注意**：前面的 `/` 非常重要，它确保图片总是从网站根目录下的 `images` 文件夹读取，而不会因为文章 URL 路径的变化而失效。
 
-## 三、 本地预览与发布
+## 三、 发布文章
 
-### 1. 本地预览（可选）
-在根目录运行命令启动本地服务器：
-```cmd
-hugo server -D
+由于本仓库直接存放最终的静态 HTML 文件，发布一篇新文章需要完成以下两件事：
+
+### 1. 创建博客页面
+
+在 `blog/` 目录下创建以文章名命名的文件夹，并在其中放入 `index.html`。可以复制已有的博客文章页面（如 `blog/flex/index.html`）作为模板，然后修改标题、日期和正文内容。
+
+### 2. 更新首页列表
+
+编辑根目录下的 `index.html`，在 `<div id="posts-list">` 区域中找到对应的年份 section（如果是新年份则新增一个 `<section>`），按照以下格式添加一条新的文章链接：
+
+```html
+<div class="row post-line">
+  <div class="posts-date col-xs-2">
+    <time datetime="2026-03-08">Mar 08</time>
+  </div>
+  <div class="posts-title col-xs-10">
+    <a href="/blog/your-post-name/">文章标题</a>
+  </div>
+</div>
 ```
-然后打开浏览器访问 `http://localhost:1313` 查看效果。`-D` 参数表示连同草稿一起显示。确认无误后，可以使用 `Ctrl+C` 停止服务器。
 
-### 2. 生成静态页面并发布
-当你写完 Markdown 文章并准备发布时，请确保文章 front matter 中的 `draft: true` 已经被改为 `draft: false`（或者直接删除该行）。然后执行以下步骤：
+### 3. 提交到 GitHub
 
-**第一步：生成网页**
-在当前目录下运行 hugo 生成最新的静态文件：
-```cmd
-hugo
-```
-*这将会把 Markdown 转换成 HTML 并更新根目录下的各个页面.*
-
-**第二步：提交到 GitHub**
-接下来将所有变动提交并推送到 GitHub 仓库来完成发布：
 ```cmd
 git add .
 git commit -m "Add new post"
