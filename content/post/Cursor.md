@@ -5,3 +5,5 @@ draft: false
 ---
 
 Cursor is an AI-powered code editor.
+
+![alt text](/images/c83024bf9b8e.png)
