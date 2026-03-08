@@ -1163,6 +1163,8 @@
           
         </div>
 
+        <div id="year-pagination"></div>
+
         <div class="site-footer">
   
   
@@ -1177,12 +1179,39 @@
 
 <script>
   hljs.initHighlightingOnLoad();
-  
-  
-  
-    
-    
-  
+</script>
+
+<script>
+(function() {
+  var sections = document.querySelectorAll('#posts-list > section');
+  var years = [];
+  sections.forEach(function(sec) {
+    var h1 = sec.querySelector('h1.site-date-catalog');
+    if (h1) years.push({ year: h1.textContent.trim(), el: sec });
+  });
+  if (years.length === 0) return;
+
+  function showYear(yr) {
+    years.forEach(function(item) {
+      item.el.style.display = item.year === yr ? '' : 'none';
+    });
+    var btns = document.querySelectorAll('#year-pagination .year-btn');
+    btns.forEach(function(btn) {
+      btn.classList.toggle('active', btn.textContent.trim() === yr);
+    });
+  }
+
+  var container = document.getElementById('year-pagination');
+  years.forEach(function(item) {
+    var btn = document.createElement('button');
+    btn.className = 'year-btn';
+    btn.textContent = item.year;
+    btn.addEventListener('click', function() { showYear(item.year); });
+    container.appendChild(btn);
+  });
+
+  showYear(years[0].year);
+})();
 </script>
 
 </body>
