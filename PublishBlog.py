@@ -1,16 +1,19 @@
 """
-PublishBlog.py - 一键发布博客文章
+PublishBlog.py - 一键发布/删除博客文章
 
 用法:
-    python PublishBlog.py --all           自动检测并发布所有未发布的文章
-    python PublishBlog.py AI              发布指定文章
-    python PublishBlog.py AI Antigravity  发布多篇文章
+    python PublishBlog.py --all                    自动检测并发布所有未发布的文章
+    python PublishBlog.py AI                       发布指定文章
+    python PublishBlog.py AI Antigravity           发布多篇文章
+    python PublishBlog.py --delete 红楼梦人物关系图  删除指定文章
+    python PublishBlog.py --delete AI Antigravity  同时删除多篇文章
 
 功能:
     1. 读取 content/post/<name>.md 中的 front matter 和正文
     2. 在 blog/<name>/ 下生成 index.html 博客页面
     3. 自动更新根目录 index.html 的文章列表
     4. 执行 git add / commit / push 完成发布
+    5. --delete 模式：删除博客页面目录并从首页列表中移除条目
 """
 
 import os
@@ -361,11 +364,11 @@ def create_blog_page(slug, title, dt, content_html, description):
     print(f"  已生成 blog/{slug}/index.html")
 
 
-def git_publish(post_names):
+def git_publish(post_names, action='Publish'):
     """执行 git add, commit, push"""
     print("\n正在提交到 GitHub...")
     subprocess.run(['git', 'add', '.'], cwd=SCRIPT_DIR)
-    msg = f'Publish post: {", ".join(post_names)}'
+    msg = f'{action} post: {", ".join(post_names)}'
     subprocess.run(['git', 'commit', '-m', msg], cwd=SCRIPT_DIR)
     result = subprocess.run(['git', 'push'], cwd=SCRIPT_DIR, capture_output=True, text=True)
     if result.returncode == 0:
@@ -373,6 +376,91 @@ def git_publish(post_names):
     else:
         print(f"  Git push 输出: {result.stdout}{result.stderr}")
         print("  请检查网络连接或 SSH 密钥配置。")
+
+
+def delete_blog_dir(slug):
+    """删除 blog/<slug>/ 目录"""
+    blog_dir = os.path.join(SCRIPT_DIR, 'blog', slug)
+    if os.path.isdir(blog_dir):
+        shutil.rmtree(blog_dir)
+        print(f"  已删除目录 blog/{slug}/")
+        return True
+    else:
+        print(f"  警告: blog/{slug}/ 目录不存在，跳过")
+        return False
+
+
+def remove_from_index(slug):
+    """从 index.html 首页列表中移除对应的文章条目"""
+    index_path = os.path.join(SCRIPT_DIR, 'index.html')
+    with open(index_path, 'r', encoding='utf-8') as f:
+        html = f.read()
+
+    href_marker = f'href="/blog/{slug}/"'
+    if href_marker not in html:
+        print(f"  警告: index.html 中未找到 {slug} 的条目，跳过")
+        return False
+
+    # 匹配包含该 href 的整个 <div class="row post-line">...</div> 块
+    # 支持两种缩进风格（带前导空格 或 顶格）
+    pattern = r'[ \t]*<div class="row post-line">.*?</div>\s*</div>\s*</div>\r?\n?'
+    def contains_slug(m):
+        return href_marker in m.group(0)
+
+    new_html = html
+    for m in re.finditer(pattern, html, re.DOTALL):
+        if href_marker in m.group(0):
+            new_html = html[:m.start()] + html[m.end():]
+            break
+
+    if new_html == html:
+        # fallback: 删除含该 href 的整行所在的 post-line 块
+        print(f"  警告: 正则未能匹配，尝试行级删除")
+        lines = html.splitlines(keepends=True)
+        # 找到含 href 的行号
+        target_line = None
+        for i, line in enumerate(lines):
+            if href_marker in line:
+                target_line = i
+                break
+        if target_line is None:
+            return False
+        # 向上找 <div class="row post-line">
+        start = target_line
+        for i in range(target_line, max(target_line - 10, -1), -1):
+            if 'row post-line' in lines[i]:
+                start = i
+                break
+        # 向下找闭合的 </div></div>
+        depth = 0
+        end = target_line
+        for i in range(start, min(start + 15, len(lines))):
+            depth += lines[i].count('<div')
+            depth -= lines[i].count('</div>')
+            end = i
+            if depth <= 0:
+                break
+        new_html = ''.join(lines[:start]) + ''.join(lines[end + 1:])
+
+    # 清理因删除条目而产生的空 <section>（只包含年份标题没有条目）
+    new_html = re.sub(
+        r'<section>\s*<h1 class="site-date-catalog">\d+</h1>\s*</section>\r?\n?',
+        '', new_html
+    )
+
+    with open(index_path, 'w', encoding='utf-8') as f:
+        f.write(new_html)
+    print(f"  已从 index.html 移除 {slug} 的条目")
+    return True
+
+
+def delete_post(post_name):
+    """删除已发布的博客文章（博客目录 + index.html 条目）"""
+    slug = post_name.lower()
+    print(f"\n========== 删除文章: {post_name} ==========")
+    dir_ok = delete_blog_dir(slug)
+    idx_ok = remove_from_index(slug)
+    return dir_ok or idx_ok
 
 
 def find_unpublished_posts():
@@ -503,16 +591,35 @@ def publish_post(post_name):
 
 
 def main():
+    args = sys.argv[1:]
+
+    # --delete 模式
+    if args and args[0] == '--delete':
+        post_names = args[1:]
+        if not post_names:
+            print("用法: python PublishBlog.py --delete <文章名> [文章名...]")
+            return
+        deleted = []
+        for name in post_names:
+            if delete_post(name):
+                deleted.append(name)
+        if deleted:
+            git_publish(deleted, action='Delete')
+            print(f"\n✅ 成功删除 {len(deleted)} 篇文章！")
+        else:
+            print("\n没有文章被成功删除。")
+        return
+
     # --all 模式: 自动检测未发布的文章
-    if len(sys.argv) == 2 and sys.argv[1] == '--all':
+    if len(args) == 1 and args[0] == '--all':
         post_names = find_unpublished_posts()
         if not post_names:
             print("没有检测到需要发布的新文章。")
             print("(所有 content/post/*.md 都已经有对应的 blog 页面且未被修改)")
             return
         print(f"检测到 {len(post_names)} 篇需要发布的文章: {', '.join(post_names)}")
-    elif len(sys.argv) >= 2:
-        post_names = sys.argv[1:]
+    elif args:
+        post_names = args
     else:
         # 默认也是 --all 模式
         post_names = find_unpublished_posts()

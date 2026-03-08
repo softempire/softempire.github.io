@@ -55,6 +55,21 @@ PublishBlog.bat AI Antigravity
 - 更新根目录 `index.html` 的文章列表
 - 执行 `git add / commit / push` 推送到 GitHub
 
+### 删除文章
+
+从博客删除一篇或多篇已发布的文章：
+```cmd
+PublishBlog.bat --delete 红楼梦人物关系图
+PublishBlog.bat --delete AI Antigravity
+```
+
+删除流程会自动完成：
+- 删除 `blog/<name>/` 目录
+- 从根目录 `index.html` 的文章列表中移除对应条目
+- 执行 `git add / commit / push` 推送到 GitHub
+
+> **注意**：源文件 `content/post/<name>.md` 不会被删除，方便以后恢复。
+
 ## 四、 文章页面特性
 
 - **页面宽度**：文章内容区域最大宽度为 750px
