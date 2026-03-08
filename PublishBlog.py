@@ -160,13 +160,13 @@ BLOG_PAGE_TEMPLATE = r'''<!DOCTYPE html>
   <img id="lightbox-img" src="" alt="" />
 </div>
 <script>
-  document.querySelectorAll('.post-content img').forEach(function(img) {
-    img.addEventListener('click', function() {
+  document.querySelectorAll('.post-content img').forEach(function(img) {{
+    img.addEventListener('click', function() {{
       var overlay = document.getElementById('lightbox-overlay');
       document.getElementById('lightbox-img').src = this.src;
       overlay.classList.add('active');
-    });
-  });
+    }});
+  }});
 </script>
 
 </body>
