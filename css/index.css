@@ -114,8 +114,6 @@ a:hover { text-decoration: none; }
   display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
   padding: 40px 0 56px; margin: 0; font: 12px var(--mono); color: var(--faint);
 }
-.site-footer::before { content: "© DingZQ"; }
-.site-footer::after { content: "Hugo · GitHub Pages"; }
 
 /* post page */
 .post-header { margin: 0; padding: 40px 0 0; }
