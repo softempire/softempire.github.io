@@ -17,7 +17,7 @@
       if (hdr) {
         var m = doc.createElement('section');
         m.className = 'masthead';
-        m.innerHTML = '<p class="eyebrow">dingzhiqiang.com</p><h1>无敌的丁苏</h1>';
+        m.innerHTML = '<p class="eyebrow">dingzhiqiang.com</p><h1><a href="/">无敌的丁苏</a></h1>';
         hdr.parentNode.insertBefore(m, hdr.nextSibling);
       }
       var yp = doc.getElementById('year-pagination'), pl = doc.getElementById('posts-list');
