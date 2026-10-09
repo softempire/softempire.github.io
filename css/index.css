@@ -2,24 +2,12 @@
    Works on top of the existing Hugo markup (flexboxgrid + github-markdown). */
 
 :root {
-  --bg: #0b0d10; --surface: #12151a; --fg: #e8eaee; --muted: #9aa2ad; --faint: #667080;
-  --line: #1f242b; --accent: #7cc4e4; --accent-soft: rgba(124, 196, 228, .10); --glow: rgba(124, 196, 228, .13);
-  --code-bg: #12151a;
-  --sans: "Geist", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-  --mono: "Geist Mono", ui-monospace, Consolas, monospace;
-  color-scheme: dark;
-}
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --bg: #f6f7f9; --surface: #ffffff; --fg: #14171c; --muted: #5d6672; --faint: #8a929d;
-    --line: #e0e4ea; --accent: #2c6e8f; --accent-soft: rgba(44, 110, 143, .10); --glow: rgba(44, 110, 143, .16);
-    --code-bg: #eef1f5; color-scheme: light;
-  }
-}
-:root[data-theme="light"] {
   --bg: #f6f7f9; --surface: #ffffff; --fg: #14171c; --muted: #5d6672; --faint: #8a929d;
   --line: #e0e4ea; --accent: #2c6e8f; --accent-soft: rgba(44, 110, 143, .10); --glow: rgba(44, 110, 143, .16);
-  --code-bg: #eef1f5; color-scheme: light;
+  --code-bg: #eef1f5;
+  --sans: "Geist", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, Consolas, monospace;
+  color-scheme: light;
 }
 
 /* global */
@@ -52,16 +40,11 @@ a:hover { text-decoration: none; }
   background: var(--accent); box-shadow: 0 0 12px var(--accent);
 }
 .site-header header { margin: 0; }
-.theme-btn {
-  font: 12px var(--mono); color: var(--muted); background: none; border: 1px solid var(--line);
-  border-radius: 999px; padding: 3px 12px; cursor: pointer;
-}
-.theme-btn:hover { color: var(--fg); border-color: var(--faint); }
 
 /* home masthead */
 .posts header { position: relative; padding-bottom: 8px; }
-.posts .site-title { font-size: 13px; }
-.masthead { padding: 56px 0 44px; }
+.posts header { display: none; }
+.masthead { padding: 48px 0 32px; }
 .masthead .eyebrow { font: 500 12px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
 .masthead h1 {
   font-weight: 500; font-size: clamp(2.4rem, 7vw, 3.4rem); line-height: 1.1; letter-spacing: -.025em;

@@ -1,32 +1,15 @@
 /* Site effects: pointer glow, particle constellation, click burst, row spotlight,
-   title scramble, reading progress, theme toggle, home masthead. */
+   title scramble, reading progress, home masthead. */
 (function () {
   'use strict';
   var doc = document, root = doc.documentElement;
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var touch = matchMedia('(hover: none)').matches;
 
-  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) {} }
-  var saved = store('theme');
-  if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
-
   function ready(fn) { doc.readyState === 'loading' ? doc.addEventListener('DOMContentLoaded', fn) : fn(); }
 
   ready(function () {
     var isHome = !!doc.querySelector('article.posts');
-
-    /* theme toggle */
-    var bar = doc.querySelector('.site-title');
-    if (bar) {
-      var tb = doc.createElement('button');
-      tb.className = 'theme-btn'; tb.type = 'button'; tb.textContent = '明 / 暗';
-      tb.addEventListener('click', function () {
-        var dark = root.dataset.theme ? root.dataset.theme === 'dark' : !matchMedia('(prefers-color-scheme: light)').matches;
-        root.dataset.theme = dark ? 'light' : 'dark';
-        store('theme', root.dataset.theme);
-      });
-      bar.appendChild(tb);
-    }
 
     /* home: masthead + year buttons above the list */
     if (isHome) {
