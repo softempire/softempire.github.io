@@ -34,8 +34,7 @@
       if (hdr) {
         var m = doc.createElement('section');
         m.className = 'masthead';
-        m.innerHTML = '<p class="eyebrow">dingzhiqiang.com</p><h1>无敌的丁苏 <span>/ notes</span></h1>' +
-          '<p>AI 工具、C++、工程软件与日常折腾的记录。写给以后的自己，也写给碰巧路过的你。</p>';
+        m.innerHTML = '<p class="eyebrow">dingzhiqiang.com</p><h1>无敌的丁苏</h1>';
         hdr.parentNode.insertBefore(m, hdr.nextSibling);
       }
       var yp = doc.getElementById('year-pagination'), pl = doc.getElementById('posts-list');
