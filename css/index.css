@@ -226,6 +226,8 @@ a:hover { text-decoration: none; }
 }
 @media (max-width: 480px) {
   .post-line { grid-template-columns: 78px 1fr; }
+  .btns { flex-wrap: nowrap; gap: 8px; }
+  .btn { flex: 1 1 auto; text-align: center; white-space: nowrap; padding: 10px 8px; font-size: 12px; }
   .view .cap { bottom: 30px; max-width: calc(100% - 20px); }
   .view .dots { left: 10px; right: auto; }
   .timeline li { grid-template-columns: 1fr; gap: 2px; }
