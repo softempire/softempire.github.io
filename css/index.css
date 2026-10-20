@@ -196,6 +196,9 @@ a:hover { text-decoration: none; }
 .tb a { color: var(--accent); }
 .tb a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
+/* two-cell title block (home) */
+.tb.tb-2 { grid-template-columns: 1fr 1fr; }
+
 /* lightbox */
 .lightbox-overlay {
   display: none; position: fixed; inset: 0; z-index: 100; justify-content: center; align-items: center;
@@ -219,6 +222,8 @@ a:hover { text-decoration: none; }
   .tb > div:nth-child(4) { order: 2; }                                          /* Sheet */
   .tb > div:nth-child(2) { order: 3; grid-column: 1 / -1; }                     /* Email gets a full row */
   .tb > div:nth-child(3) { order: 4; grid-column: 1 / -1; border-bottom: 0; }   /* Feed */
+  .tb.tb-2 > div { order: 0; grid-column: auto; border-bottom: 0; }
+  .tb.tb-2 > div:nth-child(1) { border-right: 1px solid var(--line); }
 }
 @media (max-width: 480px) {
   .post-line { grid-template-columns: 78px 1fr; }
