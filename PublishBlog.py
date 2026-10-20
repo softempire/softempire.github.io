@@ -27,6 +27,11 @@ from datetime import datetime
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 os.chdir(SCRIPT_DIR)
 
+# 博客文章列表页（根目录 index.html 现在是个人主页）
+BLOG_INDEX = os.path.join(SCRIPT_DIR, 'blog', 'index.html')
+HOME_INDEX = os.path.join(SCRIPT_DIR, 'index.html')
+HOME_LATEST_COUNT = 5
+
 # ============================================================
 # 博客页面 HTML 模板
 # ============================================================
@@ -291,7 +296,7 @@ def parse_date(date_str):
 
 def update_index_html(slug, title, dt):
     """更新 index.html，将新文章添加到对应年份的 section 中"""
-    index_path = os.path.join(SCRIPT_DIR, 'index.html')
+    index_path = BLOG_INDEX
     with open(index_path, 'r', encoding='utf-8') as f:
         html = f.read()
 
@@ -336,7 +341,8 @@ def update_index_html(slug, title, dt):
 
     with open(index_path, 'w', encoding='utf-8') as f:
         f.write(html)
-    print(f"  已更新 index.html 列表")
+    print(f"  已更新 blog/index.html 列表")
+    update_home_latest()
 
 
 def create_blog_page(slug, title, dt, content_html, description):
@@ -363,6 +369,26 @@ def create_blog_page(slug, title, dt, content_html, description):
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(page_html)
     print(f"  已生成 blog/{slug}/index.html")
+
+
+def update_home_latest():
+    """把 blog/index.html 中最新的几篇文章同步到个人主页的『最新文章』区块"""
+    with open(BLOG_INDEX, 'r', encoding='utf-8') as f:
+        blog_html = f.read()
+    # 列表按年份降序、年内新文章在前，所以按出现顺序取前 N 条即可
+    entries = re.findall(r'<div class="row post-line">.*?</a>\s*</div>\s*</div>', blog_html, re.DOTALL)
+    latest = '\n'.join(entries[:HOME_LATEST_COUNT])
+    with open(HOME_INDEX, 'r', encoding='utf-8') as f:
+        home = f.read()
+    new_home, n = re.subn(r'<!-- LATEST:START -->.*?<!-- LATEST:END -->',
+                          lambda m: '<!-- LATEST:START -->\n' + latest + '\n<!-- LATEST:END -->',
+                          home, flags=re.DOTALL)
+    if n == 0:
+        print("  警告: 主页未找到 LATEST 标记，跳过更新最新文章")
+        return
+    with open(HOME_INDEX, 'w', encoding='utf-8', newline='') as f:
+        f.write(new_home)
+    print("  已更新主页『最新文章』")
 
 
 def git_publish(post_names, action='Publish'):
@@ -393,7 +419,7 @@ def delete_blog_dir(slug):
 
 def remove_from_index(slug):
     """从 index.html 首页列表中移除对应的文章条目"""
-    index_path = os.path.join(SCRIPT_DIR, 'index.html')
+    index_path = BLOG_INDEX
     with open(index_path, 'r', encoding='utf-8') as f:
         html = f.read()
 
@@ -451,7 +477,8 @@ def remove_from_index(slug):
 
     with open(index_path, 'w', encoding='utf-8') as f:
         f.write(new_html)
-    print(f"  已从 index.html 移除 {slug} 的条目")
+    print(f"  已从 blog/index.html 移除 {slug} 的条目")
+    update_home_latest()
     return True
 
 
