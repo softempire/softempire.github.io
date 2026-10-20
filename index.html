@@ -1,56 +1,64 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="DingZQ" />
-  <title>丁志强 · 无敌的丁苏</title>
-  <meta name="description" content="Ding Zhiqiang 的个人网站：简介、博客与联系方式。" />
-  <meta property="og:title" content="丁志强 · 无敌的丁苏" />
+  <title>Ding Zhiqiang</title>
+  <meta name="description" content="Personal site of Ding Zhiqiang: about, blog and contact." />
+  <meta property="og:title" content="Ding Zhiqiang" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.dingzhiqiang.com/" />
   <link rel="canonical" href="https://www.dingzhiqiang.com/" />
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet" href="/css/index.css">
   <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Zhiqiang&#39;s Blog">
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
   <script src="/js/fx.js" defer></script>
+  <script src="/js/tower.js" defer></script>
 </head>
 <body>
   <div class="page">
     <header>
       <div class="signatures site-title">
-        <a href="/" class="brand">无敌的丁苏</a>
+        <a href="/" class="brand">Ding Zhiqiang</a>
         <nav class="site-nav"><a href="/">Home</a><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></nav>
       </div>
     </header>
 
     <section class="hero">
       <div>
-        <p class="eyebrow" style="font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 18px">dingzhiqiang.com</p>
-        <h1>你好，我是丁志强<br><span>Ding Zhiqiang</span></h1>
-        <p>软件工程师，做 CAD / BIM / AEC 方向的 C++ 桌面软件开发，也热衷折腾 AI 编程工具与各类效率工具。这里记录我的笔记和作品。</p>
-        <div class="btns">
-          <a class="btn primary" href="/blog/">阅读博客</a>
-          <a class="btn" href="/about/">关于我</a>
-          <a class="btn" href="/contact/">联系我</a>
-        </div>
+        <h1>Software<br>for things<br>that get built</h1>
+        <p>I write C++ for CAD, BIM and AEC desktop software, and spend my spare time testing AI coding tools. This site holds my notes and projects.</p>
+        <div class="btns"><a class="btn primary" href="/blog/">Read the blog</a><a class="btn" href="/about/">About me</a><a class="btn" href="/contact/">Contact</a></div>
       </div>
-      <div class="avatar" aria-hidden="true">丁</div>
+      <div class="view" id="view" aria-label="Rotating wireframe of a twisted tower. Drag to rotate.">
+        <canvas id="cv"></canvas>
+        <div class="cap">Drag to rotate &middot; <b>H = 148.0 m</b> &middot; 36 floors</div>
+      </div>
     </section>
 
     <section class="section">
-      <h2>关注方向</h2>
-      <div class="cards">
-        <div class="card"><h3>CAD / BIM / AEC</h3><p>三维建模、几何内核与工程软件开发。</p></div>
-        <div class="card"><h3>C++ 与工具链</h3><p>Boost、CMake、vcpkg 与现代 C++ 实践。</p></div>
-        <div class="card"><h3>AI 编程与自动化</h3><p>Claude Code、Codex、Agent 工具与工作流。</p></div>
+      <h2>Focus <span>Details A&ndash;C</span></h2>
+      <div class="details">
+        <div class="detail">
+          <svg viewBox="0 0 200 84" aria-hidden="true"><path class="s" d="M30 66 L30 28 L90 10 L150 28 L150 66 Z"/><path class="s" d="M30 28 L90 46 L150 28 M90 46 L90 66"/><path class="s2" d="M30 74 L150 74 M30 70 L30 78 M150 70 L150 78"/><circle class="s" cx="170" cy="40" r="12"/><path class="s dash" d="M158 40 L182 40 M170 28 L170 52"/></svg>
+          <span class="ref">Detail A</span><h3>CAD / BIM / AEC</h3><p>3D modeling, geometry kernels and engineering software.</p>
+        </div>
+        <div class="detail">
+          <svg viewBox="0 0 200 84" aria-hidden="true"><path class="s" d="M20 20 H70 V64 H20 Z M70 32 H120 V64 H70 M120 44 H170 V64 H120"/><path class="s2" d="M20 74 H170"/><path class="s dash" d="M45 10 V74 M95 20 V74 M145 32 V74"/></svg>
+          <span class="ref">Detail B</span><h3>C++ &amp; Toolchain</h3><p>Boost, CMake, vcpkg and modern C++ practice.</p>
+        </div>
+        <div class="detail">
+          <svg viewBox="0 0 200 84" aria-hidden="true"><path class="s" d="M20 62 C50 62 50 22 80 22 S110 62 140 62 S160 42 180 42"/><circle class="s2" cx="80" cy="22" r="4"/><circle class="s2" cx="140" cy="62" r="4"/><path class="s dash" d="M20 74 H180 M80 22 V74 M140 62 V74"/></svg>
+          <span class="ref">Detail C</span><h3>AI Coding &amp; Automation</h3><p>Claude Code, Codex, agent tools and workflows.</p>
+        </div>
       </div>
     </section>
 
     <section class="section" id="latest">
-      <h2>最新文章 <a href="/blog/">全部文章 →</a></h2>
+      <h2>Latest posts <a href="/blog/">All posts &rarr;</a></h2>
       <div id="latest-posts">
 <!-- LATEST:START -->
 <div class="row post-line">
@@ -98,14 +106,15 @@
     </section>
 
     <section class="section">
-      <h2>联系 <a href="/contact/">更多 →</a></h2>
-      <ul class="contact-list">
-      <li><span class="k">Email</span><a href="mailto:im@dingzhiqiang.com">im@dingzhiqiang.com</a></li>
-      <li><span class="k">Blog RSS</span><a href="/index.xml">dingzhiqiang.com/index.xml</a></li>
-    </ul>
+      <div class="tb">
+        <div><small>Drawn by</small><span class="big">Ding Zhiqiang</span></div>
+        <div><small>Email</small><a href="mailto:im@dingzhiqiang.com">im@dingzhiqiang.com</a></div>
+        <div><small>Feed</small><a href="/index.xml">/index.xml</a></div>
+        <div><small>Sheet</small>Home &middot; Rev 2026</div>
+      </div>
     </section>
 
-    <div class="site-footer"><span>© 2026 Ding Zhiqiang</span><span><a href="/index.xml">RSS</a></span></div>
+    <div class="site-footer"><span>&copy; 2026 Ding Zhiqiang</span><span><a href="/index.xml">RSS</a></span></div>
   </div>
 </body>
 </html>
