@@ -21,7 +21,7 @@
 
 /* global */
 * { box-sizing: border-box; }
-html { background: var(--bg); }
+html { background: var(--bg); overflow-y: scroll; }   /* always reserve the scrollbar so the header never shifts between pages */
 body {
   margin: 0; padding: 0 16px;
   background: var(--bg); color: var(--fg);
@@ -210,8 +210,8 @@ a:hover { text-decoration: none; }
 }
 
 @media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; }
-  .view { aspect-ratio: 1 / .9; }
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .view { aspect-ratio: 1 / .9; min-height: 0; }
   .detail { border-right: 0; border-bottom: 1px solid var(--line); } .detail:last-child { border-bottom: 0; }
   .tb { grid-template-columns: 1fr 1fr; }
   .tb > div { border-right: 0; border-bottom: 1px solid var(--line); overflow-wrap: normal; }
@@ -222,6 +222,8 @@ a:hover { text-decoration: none; }
 }
 @media (max-width: 480px) {
   .post-line { grid-template-columns: 78px 1fr; }
+  .view .cap { bottom: 30px; max-width: calc(100% - 20px); }
+  .view .dots { left: 10px; right: auto; }
   .timeline li { grid-template-columns: 1fr; gap: 2px; }
   .site-title { flex-wrap: wrap; row-gap: 10px; }
   .site-title .brand { white-space: nowrap; }
