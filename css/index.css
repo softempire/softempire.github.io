@@ -38,7 +38,6 @@ a:hover { text-decoration: none; }
   position: relative; max-width: 1120px; margin: 20px auto; padding: 0 clamp(16px, 4vw, 34px);
   background: var(--surface); border: 1px solid var(--fg);
 }
-.posts, .post { max-width: 880px; }
 .page::before, .posts::before, .post::before { content: ""; position: absolute; inset: 6px; border: 1px solid var(--line); pointer-events: none; }
 .posts > .row > div, .post > .row > div { max-width: none; flex-basis: 100%; margin-left: 0; margin-right: 0; padding: 0; }
 .row.end-xs, .header-line { display: none; }
