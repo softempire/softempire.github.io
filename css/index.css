@@ -133,12 +133,7 @@ a:hover { text-decoration: none; }
   font: 700 clamp(3rem, 8.4vw, 6.2rem)/.88 var(--display); font-stretch: 70%; text-transform: uppercase;
   letter-spacing: -.01em; margin: 0 0 22px; text-wrap: balance;
 }
-.hero p { max-width: 44ch; color: var(--muted); margin: 0 0 24px; font-weight: 300; font-size: 1.1rem; }
-.btns { display: flex; gap: 10px; flex-wrap: wrap; }
-.btn { font: 500 13px var(--mono); padding: 10px 18px; border: 1px solid var(--fg); transition: background .2s, color .2s; }
-.btn:hover { background: var(--fg); color: var(--surface); }
-.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--surface); }
-.btn.primary:hover { background: var(--fg); border-color: var(--fg); }
+.hero p { max-width: 44ch; color: var(--muted); margin: 0; font-weight: 300; font-size: 1.1rem; }
 .view {
   position: relative; aspect-ratio: 1 / 1.05; min-height: 320px; border: 1px solid var(--line); cursor: grab;
   background: linear-gradient(var(--accent-soft) 1px, transparent 1px) 0 0 / 100% 40px, linear-gradient(90deg, var(--accent-soft) 1px, transparent 1px) 0 0 / 40px 100%;
@@ -226,8 +221,6 @@ a:hover { text-decoration: none; }
 }
 @media (max-width: 480px) {
   .post-line { grid-template-columns: 78px 1fr; }
-  .btns { flex-wrap: nowrap; gap: 8px; }
-  .btn { flex: 1 1 auto; text-align: center; white-space: nowrap; padding: 10px 8px; font-size: 12px; }
   .view .cap { bottom: 30px; max-width: calc(100% - 20px); }
   .view .dots { left: 10px; right: auto; }
   .timeline li { grid-template-columns: 1fr; gap: 2px; }
