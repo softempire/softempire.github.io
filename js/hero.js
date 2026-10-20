@@ -149,8 +149,64 @@
       dim: { a: [-5, -2.7, -4.8], b: [5, -2.7, -4.8], text: '1,000 m' } };
   }
 
-  var builders = [building, chip, mechanical, pipes, road], cache = [];
-  function scene(i, t) { return (i === 2 || i === 3) ? builders[i](t) : (cache[i] || (cache[i] = builders[i](t))); }
+  var SOFT_CACHE;
+  function software(t) {
+    if (!SOFT_CACHE) {
+      var lines = [], conns = [], ys = [-2, 0, 2], xs = [[-2.7, -0.9, 0.9, 2.7], [-1.8, 0, 1.8], [-0.9, 0.9]], zs = [[0.8, -0.8, 0.8, -0.8], [0.8, -0.8, 0.8], [0.8, -0.8]];
+      ys.forEach(function (y, l) {
+        lines.push(L([[-4, y, -2.4], [4, y, -2.4], [4, y, 2.4], [-4, y, 2.4], [-4, y, -2.4]], 0, 0.55));
+        xs[l].forEach(function (x, m) { var z = zs[l][m]; lines = lines.concat(box(x - 0.6, y, z - 0.6, x + 0.6, y + 0.45, z + 0.6, l === 1 ? 1 : 0)); });
+      });
+      for (var l = 0; l < 2; l++) xs[l].forEach(function (x, m) {
+        xs[l + 1].forEach(function (x2, m2) {
+          var p = [[x, ys[l] + 0.45, zs[l][m]], [x2, ys[l + 1], zs[l + 1][m2]]];
+          lines.push(L(p, 2, 0.9)); conns.push(p);
+        });
+      });
+      SOFT_CACHE = { lines: lines, conns: conns };
+    }
+    var dots = SOFT_CACHE.conns.map(function (p, i) {
+      var u = (((t * 0.3 + i * 0.29) % 1) + 1) % 1;
+      return [p[0][0] + (p[1][0] - p[0][0]) * u, p[0][1] + (p[1][1] - p[0][1]) * u, p[0][2] + (p[1][2] - p[0][2]) * u];
+    });
+    return { name: 'Software', sub: 'layered modules, call flow', ext: 5.2, ground: null, lines: SOFT_CACHE.lines, dots: dots,
+      dim: { a: [-4, -2, 3.2], b: [4, -2, 3.2], text: '9 modules' } };
+  }
+
+  function comms(t) {
+    var lines = [], dots = [], GY = -2.8, i;
+    function lattice(cx, cz, H, w0, w1, secs) {
+      var lv = [], k, j;
+      for (k = 0; k <= secs; k++) {
+        var w = w0 + (w1 - w0) * k / secs, y = GY + H * k / secs;
+        lv.push([[cx - w, y, cz - w], [cx + w, y, cz - w], [cx + w, y, cz + w], [cx - w, y, cz + w]]);
+        lines.push(L(lv[k].concat([lv[k][0]])));
+      }
+      for (j = 0; j < 4; j++) lines.push(L(lv.map(function (q) { return q[j]; })));
+      for (k = 0; k < secs; k++) for (j = 0; j < 4; j++) {
+        var a = lv[k][j], b = lv[k][(j + 1) % 4], a2 = lv[k + 1][j], b2 = lv[k + 1][(j + 1) % 4];
+        lines.push(L([a, b2], 0, 0.7)); lines.push(L([b, a2], 0, 0.7));
+      }
+      return GY + H;
+    }
+    var topA = lattice(-3.2, 0, 6, 0.7, 0.15, 6), topB = lattice(3.4, 0, 3, 0.5, 0.12, 3), ay = topA + 0.3, by = topB + 0.3;
+    lines = lines.concat(box(-3.35, topA, -0.15, -3.05, topA + 0.6, 0.15, 1));
+    for (i = 0; i < 4; i++) {                                                // radio waves leaving the antenna
+      var u = (((t * 0.35 + i / 4) % 1) + 1) % 1;
+      lines.push(L(ring(-3.2, ay, 0, 0.3 + u * 5.5, 48), 1, (1 - u) * 0.85));
+    }
+    var dish = []; for (i = 0; i <= 24; i++) { var th = i / 24 * TAU; dish.push([3.1, by + 0.6 * Math.cos(th), 0.6 * Math.sin(th)]); }
+    lines.push(L(dish, 1)); lines.push(L([[3.4, by, 0], [3.1, by, 0]], 1));
+    var A = [-3.05, ay, 0], B = [3.1, by, 0];                               // dashed radio link with pulses
+    for (i = 0; i < 14; i += 2) lines.push(L([lerp(A, B, i / 14), lerp(A, B, (i + 1) / 14)], 2, 0.9));
+    for (i = 0; i < 3; i++) dots.push(lerp(A, B, (((t * 0.3 + i / 3) % 1) + 1) % 1));
+    return { name: 'Communication', sub: 'base station, radio link', ext: 5.6, ground: { y: GY, r: 4.8 }, lines: lines, dots: dots,
+      dim: { a: [-3.2, GY, 3.4], b: [3.4, GY, 3.4], text: '2.4 km' } };
+  }
+  function lerp(a, b, u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u]; }
+
+  var builders = [building, chip, mechanical, pipes, road, software, comms], cache = [], ANIM = { 2: 1, 3: 1, 5: 1, 6: 1 };
+  function scene(i, t) { return ANIM[i] ? builders[i](t) : (cache[i] || (cache[i] = builders[i](t))); }
 
   /* ---------- rendering ---------- */
   function tok(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
