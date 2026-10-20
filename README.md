@@ -2,7 +2,7 @@
 
 ## 站点结构
 
-- `/`：个人主页（简介、关注方向、最新文章、联系方式）。『最新文章』区块由 `PublishBlog.py` 自动更新，勿删 `<!-- LATEST:START/END -->` 标记
+- `/`：个人主页（动画、关注方向、联系方式）
 - `/about/`、`/contact/`：手写页面，直接改 `about/index.html`、`contact/index.html`
 - `/blog/`：文章列表（原来的首页），发布/删除文章时更新的是 `blog/index.html`
 
@@ -58,7 +58,7 @@ PublishBlog.bat AI Antigravity
 发布流程会自动完成：
 - 处理图片（重命名、复制到 `/images/`）
 - 将 Markdown 转换为 HTML，生成 `blog/<name>/index.html`
-- 更新 `blog/index.html` 的文章列表，并同步主页『最新文章』
+- 更新 `blog/index.html` 的文章列表
 - 执行 `git add / commit / push` 推送到 GitHub
 
 ### 删除文章
@@ -71,7 +71,7 @@ PublishBlog.bat --delete AI Antigravity
 
 删除流程会自动完成：
 - 删除 `blog/<name>/` 目录
-- 从 `blog/index.html` 的文章列表中移除对应条目，并同步主页
+- 从 `blog/index.html` 的文章列表中移除对应条目
 - 执行 `git add / commit / push` 推送到 GitHub
 
 > **注意**：源文件 `content/post/<name>.md` 不会被删除，方便以后恢复。
