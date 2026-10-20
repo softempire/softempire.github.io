@@ -12,11 +12,11 @@
   <meta property="og:url" content="https://www.dingzhiqiang.com/" />
   <link rel="canonical" href="https://www.dingzhiqiang.com/" />
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
-  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/index.css?v=20261020">
   <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Zhiqiang&#39;s Blog">
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
-  <script src="/js/fx.js" defer></script>
-  <script src="/js/tower.js" defer></script>
+  <script src="/js/fx.js?v=20261020" defer></script>
+  <script src="/js/hero.js?v=20261020" defer></script>
 </head>
 <body>
   <div class="page">
@@ -33,9 +33,10 @@
         <p>I write C++ for CAD, BIM and AEC desktop software, and spend my spare time testing AI coding tools. This site holds my notes and projects.</p>
         <div class="btns"><a class="btn primary" href="/blog/">Read the blog</a><a class="btn" href="/about/">About me</a><a class="btn" href="/contact/">Contact</a></div>
       </div>
-      <div class="view" id="view" aria-label="Rotating wireframe of a twisted tower. Drag to rotate.">
+      <div class="view" id="view" aria-label="Rotating wireframe that changes between architecture, silicon, mechanical, hydraulic and civil subjects. Drag to rotate.">
         <canvas id="cv"></canvas>
-        <div class="cap">Drag to rotate &middot; <b>H = 148.0 m</b> &middot; 36 floors</div>
+        <div class="cap"><b id="scene-name">Architecture</b> &middot; <span id="scene-sub"></span></div>
+        <div class="dots" id="scene-dots"></div>
       </div>
     </section>
 
