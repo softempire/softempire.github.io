@@ -203,9 +203,30 @@
     return { name: 'Communication', sub: 'base station, radio link', ext: 5.6, ground: { y: GY, r: 4.8 }, lines: lines, dots: dots,
       dim: { a: [-3.2, GY, 3.4], b: [3.4, GY, 3.4], text: '2.4 km' } };
   }
+  function agent(t) {
+    var lines = [], dots = [], N = 6, R = 3.4, GY = -1.2, i, hub = [0, 0, 0], nodes = [];
+    lines = lines.concat(box(-0.8, -0.8, -0.8, 0.8, 0.8, 0.8, 1));              // the agent: central core
+    lines = lines.concat(box(-0.4, -0.4, -0.4, 0.4, 0.4, 0.4, 0));
+    lines.push(L(ring(0, 0, 0, 1.5 + 0.12 * Math.sin(t * 2), 40), 2, 0.8));      // thinking halo
+    for (i = 0; i < N; i++) {                                                  // tools around it
+      var a = i / N * TAU, x = R * Math.cos(a), z = R * Math.sin(a), n = [x, 0, z];
+      nodes.push(n);
+      lines = lines.concat(box(x - 0.45, -0.45, z - 0.45, x + 0.45, 0.45, z + 0.45, 0));
+      lines.push(L(ring(x, GY, z, 0.6, 16), 2, 0.7));
+      lines.push(L([[x, -0.45, z], [x, GY, z]], 2, 0.6));
+      lines.push(L([[hub[0] + 0.8 * Math.cos(a), 0, 0.8 * Math.sin(a)], [x - 0.45 * Math.cos(a), 0, z - 0.45 * Math.sin(a)]], 2, 0.9));
+    }
+    lines.push(L(ring(0, GY, 0, R, 48), 2, 0.5));
+    for (i = 0; i < N; i++) {                                                  // calls go out, results come back
+      var u = (((t * 0.35 + i * 0.17) % 1) + 1) % 1, v = u < 0.5 ? u * 2 : 2 - u * 2, a2 = i / N * TAU;
+      dots.push(lerp([1.0 * Math.cos(a2), 0, 1.0 * Math.sin(a2)], [(R - 0.6) * Math.cos(a2), 0, (R - 0.6) * Math.sin(a2)], v));
+    }
+    return { name: 'Agent', sub: 'planner, tools, feedback loop', ext: 4.4, ground: { y: GY, r: 4.8 }, lines: lines, dots: dots,
+      dim: { a: [-R, GY, R + 0.9], b: [R, GY, R + 0.9], text: '6 tools' } };
+  }
   function lerp(a, b, u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u]; }
 
-  var builders = [building, chip, mechanical, pipes, road, software, comms], cache = [], ANIM = { 2: 1, 3: 1, 5: 1, 6: 1 };
+  var builders = [building, chip, mechanical, pipes, road, software, comms, agent], cache = [], ANIM = { 2: 1, 3: 1, 5: 1, 6: 1, 7: 1 };
   function scene(i, t) { return ANIM[i] ? builders[i](t) : (cache[i] || (cache[i] = builders[i](t))); }
 
   /* ---------- rendering ---------- */
