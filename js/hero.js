@@ -145,7 +145,7 @@
     lines.push(L(left, 1)); lines.push(L(right, 1));
     for (var i = 0; i < mid.length - 1; i += 2) lines.push(L([mid[i], mid[i + 1]], 0));                    // centre dashes
     for (i = 0; i < mid.length; i += 5) lines.push(L([left[i], right[i]], 0, 0.8));                          // stations
-    return { name: 'Civil road', sub: 'alignment with stations', ext: 5.2, ground: null, lines: lines,
+    return { name: 'Civil', sub: 'alignment with stations', ext: 5.2, ground: null, lines: lines,
       dim: { a: [-5, -2.7, -4.8], b: [5, -2.7, -4.8], text: '1,000 m' } };
   }
 
@@ -226,7 +226,7 @@
   }
   function lerp(a, b, u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u]; }
 
-  var builders = [building, chip, mechanical, pipes, road, software, comms, agent], cache = [], ANIM = { 2: 1, 3: 1, 5: 1, 6: 1, 7: 1 };
+  var builders = [building, road, chip, mechanical, pipes, software, comms, agent], cache = [], ANIM = { 3: 1, 4: 1, 5: 1, 6: 1, 7: 1 };
   function scene(i, t) { return ANIM[i] ? builders[i](t) : (cache[i] || (cache[i] = builders[i](t))); }
 
   /* ---------- rendering ---------- */
