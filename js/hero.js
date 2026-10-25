@@ -225,60 +225,48 @@
       dim: { a: [-R, GY, R + 0.9], b: [R, GY, R + 0.9], text: '6 tools' } };
   }
   function mesh(t) {
-    var K = 11, M = 32, r0 = 0.7, R = 3.7, lines = [], grid = [], k, j, amp = 0.4 * Math.sin(t * 1.6);
-    for (k = 0; k <= K; k++) {                                                 // rings refined towards the hole
-      var r = r0 * Math.pow(R / r0, k / K), row = [];
-      for (j = 0; j < M; j++) {
-        var a = (j + 0.5 * (k % 2)) / M * TAU, w = 1 - (r - r0) / (R - r0);
-        row.push([r * Math.cos(a), amp * w * Math.cos(2 * a) + 0.12 * amp * w, r * Math.sin(a)]);
-      }
-      grid.push(row);
+    var N = 12, H2 = N / 2, S = 3.6, lines = [], i, j, amp = 0.55 * Math.sin(t * 1.6), cnt = {}, edges = [];
+    function pos(i, j) {                                                       // graded grid, dense around the re-entrant corner
+      var sx = -1 + 2 * i / N, sz = -1 + 2 * j / N, x = S * (sx < 0 ? -1 : 1) * Math.pow(Math.abs(sx), 1.7), z = S * (sz < 0 ? -1 : 1) * Math.pow(Math.abs(sz), 1.7), f = (x + S) / (2 * S);
+      return [x, amp * 1.3 * f * f, z];                                       // clamped on the left, bends like a bracket
     }
-    for (k = 0; k <= K; k++) {
-      var ring_ = grid[k].concat([grid[k][0]]);
-      lines.push(L(ring_, k === 0 ? 1 : k === K ? 0 : 2, k === 0 || k === K ? 1 : 0.9));
-      if (k === K) break;
-      for (j = 0; j < M; j++) {                                                // radial edge + diagonal = triangles
-        var j2 = k % 2 ? (j + 1) % M : (j + M - 1) % M;
-        lines.push(L([grid[k][j], grid[k + 1][j]], 2, 0.9));
-        lines.push(L([grid[k][j], grid[k + 1][j2]], 2, 0.9));
-      }
+    function edge(i, j, i2, j2) { var k = i + ',' + j + ',' + i2 + ',' + j2; if (!cnt[k]) { cnt[k] = 0; edges.push([i, j, i2, j2]); } cnt[k]++; }
+    for (i = 0; i < N; i++) for (j = 0; j < N; j++) {                          // L shape: one quadrant removed
+      if (i >= H2 && j >= H2) continue;
+      edge(i, j, i + 1, j); edge(i, j + 1, i + 1, j + 1); edge(i, j, i, j + 1); edge(i + 1, j, i + 1, j + 1);
+      lines.push((i < H2) === (j < H2) ? L([pos(i, j), pos(i + 1, j + 1)], 2, 0.9) : L([pos(i + 1, j), pos(i, j + 1)], 2, 0.9));
     }
-    return { name: 'Mesh', sub: 'finite elements, refined at the hole', ext: 4.8, ground: null, lines: lines, dots: null,
-      dim: { a: [-R, 0, R + 0.6], b: [R, 0, R + 0.6], text: '704 tris' } };
+    edges.forEach(function (e) {
+      var k = e.join(',');
+      var seg = [pos(e[0], e[1]), pos(e[2], e[3])];
+      lines.push(L(seg, cnt[k] === 1 ? 0 : 2, cnt[k] === 1 ? 1 : 0.9));
+    });
+    return { name: 'Mesh', sub: 'finite elements, L-bracket', ext: 4.8, ground: null, lines: lines, dots: [pos(H2, H2)],
+      dim: { a: [-S, 0, S + 0.6], b: [S, 0, S + 0.6], text: '216 tris' } };
   }
 
   function geometry(t) {
-    var C = [1, 4, 6, 4, 1], N = 5, lines = [], cp = [], i, j;
-    for (i = 0; i < N; i++) {                                                  // 5 x 5 control net, gently breathing
-      cp.push([]);
-      for (j = 0; j < N; j++) cp[i].push([(i - 2) * 1.5, 1.1 * Math.sin(i * 1.2 + j * 0.8 + t * 0.8) * (1 - 0.25 * Math.abs(i - 2)) + 0.6 * Math.cos(j * 1.1 - t * 0.5), (j - 2) * 1.5]);
-    }
-    function bern(i, u) { return C[i] * Math.pow(u, i) * Math.pow(1 - u, 4 - i); }
-    function P(u, v) {
-      var x = 0, y = 0, z = 0;
-      for (var a = 0; a < N; a++) for (var b = 0; b < N; b++) {
-        var w = bern(a, u) * bern(b, v), q = cp[a][b]; x += w * q[0]; y += w * q[1]; z += w * q[2];
-      }
-      return [x, y, z];
-    }
-    for (i = 0; i < N; i++) { lines.push(L(cp[i], 2, 0.8)); lines.push(L(cp.map(function (r) { return r[i]; }), 2, 0.8)); }
-    for (i = 0; i <= 8; i++) {                                                 // isoparametric curves of the surface
-      var u = i / 8, cu = [], cv_ = [];
-      for (j = 0; j <= 24; j++) { cu.push(P(u, j / 24)); cv_.push(P(j / 24, u)); }
-      lines.push(L(cu, 0, 0.9)); lines.push(L(cv_, 0, 0.9));
-    }
-    var u0 = 0.5 + 0.35 * Math.sin(t * 0.7), v0 = 0.5 + 0.35 * Math.cos(t * 0.5), cu0 = [], cv0 = [], e = 0.01;
-    for (j = 0; j <= 24; j++) { cu0.push(P(u0, j / 24)); cv0.push(P(j / 24, v0)); }
-    lines.push(L(cu0, 1)); lines.push(L(cv0, 1));                               // the evaluated u / v curves
-    var p0 = P(u0, v0), pu = P(u0 + e, v0), pv = P(u0, v0 + e);
-    var du = [pu[0] - p0[0], pu[1] - p0[1], pu[2] - p0[2]], dv = [pv[0] - p0[0], pv[1] - p0[1], pv[2] - p0[2]];
-    var n = [du[1] * dv[2] - du[2] * dv[1], du[2] * dv[0] - du[0] * dv[2], du[0] * dv[1] - du[1] * dv[0]], nl = Math.hypot(n[0], n[1], n[2]) || 1;
-    if (n[1] < 0) { nl = -nl; }
-    lines.push(L([p0, [p0[0] + n[0] / nl * 1.5, p0[1] + n[1] / nl * 1.5, p0[2] + n[2] / nl * 1.5]], 1));  // surface normal
-    return { name: 'Geometry', sub: 'B-spline surface, normal, curves', ext: 4.2, ground: null, lines: lines, dots: [p0],
-      dim: { a: [-3, -2, 3.4], b: [3, -2, 3.4], text: 'degree 4 × 4' } };
+    var lines = [], poly = [[-3, -2], [3, -2], [3, 1], [2, 2], [-3, 2]], Y0 = -1, Y1 = 1, i;   // block with one chamfered corner
+    var top = poly.map(function (q) { return [q[0], Y1, q[1]]; }), bot = poly.map(function (q) { return [q[0], Y0, q[1]]; });
+    lines.push(L(top.concat([top[0]]))); lines.push(L(bot.concat([bot[0]])));
+    for (i = 0; i < poly.length; i++) lines.push(L([bot[i], top[i]]));
+    var hx = -0.8, hz = 0, bx = 1.2, bz = -0.4;
+    lines.push(L(ring(hx, Y1, hz, 0.9, 32), 1)); lines.push(L(ring(hx, Y0, hz, 0.9, 32), 1, 0.7));          // through hole
+    [0, 1, 2, 3].forEach(function (q) { var a = q * Math.PI / 2; lines.push(L([[hx + 0.9 * Math.cos(a), Y1, hz + 0.9 * Math.sin(a)], [hx + 0.9 * Math.cos(a), Y0, hz + 0.9 * Math.sin(a)]], 1, 0.7)); });
+    lines.push(L(ring(bx, Y1, bz, 0.8, 32), 1)); lines.push(L(ring(bx, Y1 + 0.9, bz, 0.8, 32), 1));        // cylindrical boss
+    [0, 1, 2, 3].forEach(function (q) { var a = q * Math.PI / 2; lines.push(L([[bx + 0.8 * Math.cos(a), Y1, bz + 0.8 * Math.sin(a)], [bx + 0.8 * Math.cos(a), Y1 + 0.9, bz + 0.8 * Math.sin(a)]], 1, 0.7)); });
+    lines.push(L([[-3, Y0 - 0.3, 2.6], [3, Y0 - 0.3, 2.6]], 2, 0.5));
+    var pts = top.concat([top[0]]), cum = [0], k;                              // points walking the top face's edge loop
+    for (k = 1; k < pts.length; k++) cum.push(cum[k - 1] + Math.hypot(pts[k][0] - pts[k - 1][0], pts[k][2] - pts[k - 1][2]));
+    var dots = [0, 1, 2].map(function (n) {
+      var d = ((((t * 0.12 + n / 3) % 1) + 1) % 1) * cum[cum.length - 1], s2 = 1;
+      while (s2 < cum.length - 1 && cum[s2] < d) s2++;
+      return lerp(pts[s2 - 1], pts[s2], (d - cum[s2 - 1]) / (cum[s2] - cum[s2 - 1]));
+    });
+    return { name: 'Geometry', sub: 'B-rep solid, edges and faces', ext: 4.6, ground: null, lines: lines, dots: dots,
+      dim: { a: [-3, Y0, 2.6], b: [3, Y0, 2.6], text: '10 faces' } };
   }
+
   function lerp(a, b, u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u]; }
 
   var builders = [building, road, chip, mechanical, pipes, software, comms, agent, mesh, geometry], cache = [], ANIM = { 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1 };
