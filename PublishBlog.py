@@ -97,7 +97,7 @@ BLOG_PAGE_TEMPLATE = r'''<!DOCTYPE html>
 <header>
   <div class="signatures site-title">
     <a href="/" class="brand">Ding Zhiqiang</a>
-    <nav class="site-nav"><a href="/">Home</a><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></nav>
+    <nav class="site-nav"><a href="/">Home</a><a href="/about/">About</a><a href="/blog/">Blog</a><a href="/software/">Software</a><a href="/contact/">Contact</a></nav>
   </div>
 </header>
 <div class="row end-xs">
@@ -340,7 +340,7 @@ def update_index_html(slug, title, dt):
 
     with open(index_path, 'w', encoding='utf-8') as f:
         f.write(html)
-    print(f"  已更新 blog/index.html 列表")
+    print(f"  已更新 blog/index.html 列表")
 
 
 def create_blog_page(slug, title, dt, content_html, description):
@@ -456,7 +456,7 @@ def remove_from_index(slug):
 
     with open(index_path, 'w', encoding='utf-8') as f:
         f.write(new_html)
-    print(f"  已从 blog/index.html 移除 {slug} 的条目")
+    print(f"  已从 blog/index.html 移除 {slug} 的条目")
     return True
 
 
