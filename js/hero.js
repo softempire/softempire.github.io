@@ -224,25 +224,39 @@
     return { name: 'Agent', sub: 'planner, tools, feedback loop', ext: 4.4, ground: { y: GY, r: 4.8 }, lines: lines, dots: dots,
       dim: { a: [-R, GY, R + 0.9], b: [R, GY, R + 0.9], text: '6 tools' } };
   }
+  var MESH_CACHE;
   function mesh(t) {
-    var N = 12, H2 = N / 2, S = 3.6, lines = [], i, j, amp = 0.55 * Math.sin(t * 1.6), cnt = {}, edges = [];
-    function pos(i, j) {                                                       // graded grid, dense around the re-entrant corner
-      var sx = -1 + 2 * i / N, sz = -1 + 2 * j / N, x = S * (sx < 0 ? -1 : 1) * Math.pow(Math.abs(sx), 1.7), z = S * (sz < 0 ? -1 : 1) * Math.pow(Math.abs(sz), 1.7), f = (x + S) / (2 * S);
-      return [x, amp * 1.3 * f * f, z];                                       // clamped on the left, bends like a bracket
+    if (!MESH_CACHE) {                                                         // PCB: grid lines cluster around component edges
+      var xs = [-3.6, -3, -2.55, -2.3, -2.2, -2.1, -1.5, -0.9, -0.7, -0.6, -0.5, -0.1, 0.4, 0.8, 0.95, 1.0, 1.05, 1.9, 2.7, 2.8, 2.9, 3.2, 3.6],
+          zs = [-2.4, -1.8, -1.3, -1.1, -1.0, -0.9, -0.7, -0.6, -0.5, -0.1, 0.4, 0.75, 0.8, 0.85, 1.3, 1.4, 1.5, 1.9, 2.4],
+          lines = [], Y = 0, i, j, nx = xs.length - 1, nz = zs.length - 1, Tk = -0.2;
+      for (i = 0; i <= nx; i++) lines.push(L([[xs[i], Y, zs[0]], [xs[i], Y, zs[nz]]], i === 0 || i === nx ? 0 : 2, i === 0 || i === nx ? 1 : 0.9));
+      for (j = 0; j <= nz; j++) lines.push(L([[xs[0], Y, zs[j]], [xs[nx], Y, zs[j]]], j === 0 || j === nz ? 0 : 2, j === 0 || j === nz ? 1 : 0.9));
+      for (i = 0; i < nx; i++) for (j = 0; j < nz; j++)                        // each cell split into two triangles
+        lines.push((i + j) % 2 ? L([[xs[i], Y, zs[j]], [xs[i + 1], Y, zs[j + 1]]], 2, 0.9) : L([[xs[i + 1], Y, zs[j]], [xs[i], Y, zs[j + 1]]], 2, 0.9));
+      var X0 = xs[0], X1 = xs[nx], Z0 = zs[0], Z1 = zs[nz];                    // board edge thickness
+      lines.push(L([[X0, Tk, Z0], [X1, Tk, Z0], [X1, Tk, Z1], [X0, Tk, Z1], [X0, Tk, Z0]], 0, 0.8));
+      [[X0, Z0], [X1, Z0], [X1, Z1], [X0, Z1]].forEach(function (c) { lines.push(L([[c[0], Y, c[1]], [c[0], Tk, c[1]]], 0, 0.8)); });
+      lines = lines.concat(box(-2.2, 0, -1.0, -0.6, 0.45, 0.8, 1));            // two ICs
+      lines = lines.concat(box(1.0, 0, -0.6, 2.8, 0.35, 1.4, 1));
+      [[-3.2, -2.0], [3.2, -2.0], [3.2, 2.0], [-3.2, 2.0]].forEach(function (c) { lines.push(L(ring(c[0], Y, c[1], 0.17, 12), 1)); });  // mounting holes
+      var trace = [[-0.6, 0.01, 0.1], [0.4, 0.01, 0.1], [0.4, 0.01, 0.4], [1.0, 0.01, 0.4]], trace2 = [[-1.5, 0.01, -1.0], [-1.5, 0.01, -1.8], [1.9, 0.01, -1.8], [1.9, 0.01, -0.6]];
+      lines.push(L(trace, 1)); lines.push(L(trace2, 1));
+      MESH_CACHE = { lines: lines, paths: [trace, trace2], tris: nx * nz * 2 };
     }
-    function edge(i, j, i2, j2) { var k = i + ',' + j + ',' + i2 + ',' + j2; if (!cnt[k]) { cnt[k] = 0; edges.push([i, j, i2, j2]); } cnt[k]++; }
-    for (i = 0; i < N; i++) for (j = 0; j < N; j++) {                          // L shape: one quadrant removed
-      if (i >= H2 && j >= H2) continue;
-      edge(i, j, i + 1, j); edge(i, j + 1, i + 1, j + 1); edge(i, j, i, j + 1); edge(i + 1, j, i + 1, j + 1);
-      lines.push((i < H2) === (j < H2) ? L([pos(i, j), pos(i + 1, j + 1)], 2, 0.9) : L([pos(i + 1, j), pos(i, j + 1)], 2, 0.9));
-    }
-    edges.forEach(function (e) {
-      var k = e.join(',');
-      var seg = [pos(e[0], e[1]), pos(e[2], e[3])];
-      lines.push(L(seg, cnt[k] === 1 ? 0 : 2, cnt[k] === 1 ? 1 : 0.9));
+    var dots = [];
+    MESH_CACHE.paths.forEach(function (pts, pi) {                              // signals running along the traces
+      var cum = [0], k, len;
+      for (k = 1; k < pts.length; k++) cum.push(cum[k - 1] + Math.hypot(pts[k][0] - pts[k - 1][0], pts[k][2] - pts[k - 1][2]));
+      len = cum[cum.length - 1];
+      for (var n = 0; n < 2; n++) {
+        var d = ((((t * 0.18 + n / 2 + pi * 0.3) % 1) + 1) % 1) * len, s2 = 1;
+        while (s2 < cum.length - 1 && cum[s2] < d) s2++;
+        dots.push(lerp(pts[s2 - 1], pts[s2], (d - cum[s2 - 1]) / (cum[s2] - cum[s2 - 1])));
+      }
     });
-    return { name: 'Mesh', sub: 'finite elements, L-bracket', ext: 4.8, ground: null, lines: lines, dots: [pos(H2, H2)],
-      dim: { a: [-S, 0, S + 0.6], b: [S, 0, S + 0.6], text: '216 tris' } };
+    return { name: 'Mesh', sub: 'PCB board, refined at components', ext: 4.6, ground: null, lines: MESH_CACHE.lines, dots: dots,
+      dim: { a: [-3.6, -0.2, 2.9], b: [3.6, -0.2, 2.9], text: MESH_CACHE.tris + ' tris' } };
   }
 
   function geometry(t) {
