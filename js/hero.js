@@ -224,9 +224,64 @@
     return { name: 'Agent', sub: 'planner, tools, feedback loop', ext: 4.4, ground: { y: GY, r: 4.8 }, lines: lines, dots: dots,
       dim: { a: [-R, GY, R + 0.9], b: [R, GY, R + 0.9], text: '6 tools' } };
   }
+  function mesh(t) {
+    var K = 11, M = 32, r0 = 0.7, R = 3.7, lines = [], grid = [], k, j, amp = 0.4 * Math.sin(t * 1.6);
+    for (k = 0; k <= K; k++) {                                                 // rings refined towards the hole
+      var r = r0 * Math.pow(R / r0, k / K), row = [];
+      for (j = 0; j < M; j++) {
+        var a = (j + 0.5 * (k % 2)) / M * TAU, w = 1 - (r - r0) / (R - r0);
+        row.push([r * Math.cos(a), amp * w * Math.cos(2 * a) + 0.12 * amp * w, r * Math.sin(a)]);
+      }
+      grid.push(row);
+    }
+    for (k = 0; k <= K; k++) {
+      var ring_ = grid[k].concat([grid[k][0]]);
+      lines.push(L(ring_, k === 0 ? 1 : k === K ? 0 : 2, k === 0 || k === K ? 1 : 0.9));
+      if (k === K) break;
+      for (j = 0; j < M; j++) {                                                // radial edge + diagonal = triangles
+        var j2 = k % 2 ? (j + 1) % M : (j + M - 1) % M;
+        lines.push(L([grid[k][j], grid[k + 1][j]], 2, 0.9));
+        lines.push(L([grid[k][j], grid[k + 1][j2]], 2, 0.9));
+      }
+    }
+    return { name: 'Mesh', sub: 'finite elements, refined at the hole', ext: 4.8, ground: null, lines: lines, dots: null,
+      dim: { a: [-R, 0, R + 0.6], b: [R, 0, R + 0.6], text: '704 tris' } };
+  }
+
+  function geometry(t) {
+    var C = [1, 4, 6, 4, 1], N = 5, lines = [], cp = [], i, j;
+    for (i = 0; i < N; i++) {                                                  // 5 x 5 control net, gently breathing
+      cp.push([]);
+      for (j = 0; j < N; j++) cp[i].push([(i - 2) * 1.5, 1.1 * Math.sin(i * 1.2 + j * 0.8 + t * 0.8) * (1 - 0.25 * Math.abs(i - 2)) + 0.6 * Math.cos(j * 1.1 - t * 0.5), (j - 2) * 1.5]);
+    }
+    function bern(i, u) { return C[i] * Math.pow(u, i) * Math.pow(1 - u, 4 - i); }
+    function P(u, v) {
+      var x = 0, y = 0, z = 0;
+      for (var a = 0; a < N; a++) for (var b = 0; b < N; b++) {
+        var w = bern(a, u) * bern(b, v), q = cp[a][b]; x += w * q[0]; y += w * q[1]; z += w * q[2];
+      }
+      return [x, y, z];
+    }
+    for (i = 0; i < N; i++) { lines.push(L(cp[i], 2, 0.8)); lines.push(L(cp.map(function (r) { return r[i]; }), 2, 0.8)); }
+    for (i = 0; i <= 8; i++) {                                                 // isoparametric curves of the surface
+      var u = i / 8, cu = [], cv_ = [];
+      for (j = 0; j <= 24; j++) { cu.push(P(u, j / 24)); cv_.push(P(j / 24, u)); }
+      lines.push(L(cu, 0, 0.9)); lines.push(L(cv_, 0, 0.9));
+    }
+    var u0 = 0.5 + 0.35 * Math.sin(t * 0.7), v0 = 0.5 + 0.35 * Math.cos(t * 0.5), cu0 = [], cv0 = [], e = 0.01;
+    for (j = 0; j <= 24; j++) { cu0.push(P(u0, j / 24)); cv0.push(P(j / 24, v0)); }
+    lines.push(L(cu0, 1)); lines.push(L(cv0, 1));                               // the evaluated u / v curves
+    var p0 = P(u0, v0), pu = P(u0 + e, v0), pv = P(u0, v0 + e);
+    var du = [pu[0] - p0[0], pu[1] - p0[1], pu[2] - p0[2]], dv = [pv[0] - p0[0], pv[1] - p0[1], pv[2] - p0[2]];
+    var n = [du[1] * dv[2] - du[2] * dv[1], du[2] * dv[0] - du[0] * dv[2], du[0] * dv[1] - du[1] * dv[0]], nl = Math.hypot(n[0], n[1], n[2]) || 1;
+    if (n[1] < 0) { nl = -nl; }
+    lines.push(L([p0, [p0[0] + n[0] / nl * 1.5, p0[1] + n[1] / nl * 1.5, p0[2] + n[2] / nl * 1.5]], 1));  // surface normal
+    return { name: 'Geometry', sub: 'B-spline surface, normal, curves', ext: 4.2, ground: null, lines: lines, dots: [p0],
+      dim: { a: [-3, -2, 3.4], b: [3, -2, 3.4], text: 'degree 4 × 4' } };
+  }
   function lerp(a, b, u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u]; }
 
-  var builders = [building, road, chip, mechanical, pipes, software, comms, agent], cache = [], ANIM = { 3: 1, 4: 1, 5: 1, 6: 1, 7: 1 };
+  var builders = [building, road, chip, mechanical, pipes, software, comms, agent, mesh, geometry], cache = [], ANIM = { 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1 };
   function scene(i, t) { return ANIM[i] ? builders[i](t) : (cache[i] || (cache[i] = builders[i](t))); }
 
   /* ---------- rendering ---------- */
