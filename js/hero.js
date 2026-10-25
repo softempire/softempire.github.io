@@ -260,25 +260,30 @@
   }
 
   function geometry(t) {
-    var lines = [], poly = [[-3, -2], [3, -2], [3, 1], [2, 2], [-3, 2]], Y0 = -1, Y1 = 1, i;   // block with one chamfered corner
-    var top = poly.map(function (q) { return [q[0], Y1, q[1]]; }), bot = poly.map(function (q) { return [q[0], Y0, q[1]]; });
-    lines.push(L(top.concat([top[0]]))); lines.push(L(bot.concat([bot[0]])));
-    for (i = 0; i < poly.length; i++) lines.push(L([bot[i], top[i]]));
-    var hx = -0.8, hz = 0, bx = 1.2, bz = -0.4;
-    lines.push(L(ring(hx, Y1, hz, 0.9, 32), 1)); lines.push(L(ring(hx, Y0, hz, 0.9, 32), 1, 0.7));          // through hole
-    [0, 1, 2, 3].forEach(function (q) { var a = q * Math.PI / 2; lines.push(L([[hx + 0.9 * Math.cos(a), Y1, hz + 0.9 * Math.sin(a)], [hx + 0.9 * Math.cos(a), Y0, hz + 0.9 * Math.sin(a)]], 1, 0.7)); });
-    lines.push(L(ring(bx, Y1, bz, 0.8, 32), 1)); lines.push(L(ring(bx, Y1 + 0.9, bz, 0.8, 32), 1));        // cylindrical boss
-    [0, 1, 2, 3].forEach(function (q) { var a = q * Math.PI / 2; lines.push(L([[bx + 0.8 * Math.cos(a), Y1, bz + 0.8 * Math.sin(a)], [bx + 0.8 * Math.cos(a), Y1 + 0.9, bz + 0.8 * Math.sin(a)]], 1, 0.7)); });
-    lines.push(L([[-3, Y0 - 0.3, 2.6], [3, Y0 - 0.3, 2.6]], 2, 0.5));
-    var pts = top.concat([top[0]]), cum = [0], k;                              // points walking the top face's edge loop
-    for (k = 1; k < pts.length; k++) cum.push(cum[k - 1] + Math.hypot(pts[k][0] - pts[k - 1][0], pts[k][2] - pts[k - 1][2]));
-    var dots = [0, 1, 2].map(function (n) {
-      var d = ((((t * 0.12 + n / 3) % 1) + 1) % 1) * cum[cum.length - 1], s2 = 1;
-      while (s2 < cum.length - 1 && cum[s2] < d) s2++;
-      return lerp(pts[s2 - 1], pts[s2], (d - cum[s2 - 1]) / (cum[s2] - cum[s2 - 1]));
+    var lines = [], dots = [], LN = 4, XW = 3.4, ZW = 2.2, gap = 0.5 + 0.4 * (0.5 + 0.5 * Math.sin(t * 0.7)), ys = [], k, i;
+    for (k = 0; k < LN; k++) ys.push((k - (LN - 1) / 2) * gap);                  // layer stack, breathing apart and together
+    var V = [[-2, -1], [0, 0.8], [2, -0.6]], top = ys[LN - 1];
+    for (k = 0; k < LN; k++) {
+      var y = ys[k], outer = k === 0 || k === LN - 1;
+      lines.push(L([[-XW, y, -ZW], [XW, y, -ZW], [XW, y, ZW], [-XW, y, ZW], [-XW, y, -ZW]], 0, outer ? 1 : 0.7));
+      var a = V[k % 3], b = V[(k + 1) % 3];                                    // copper traces joining the vias
+      lines.push(L([[a[0], y, a[1]], [b[0], y, a[1]], [b[0], y, b[1]]], k === LN - 1 ? 1 : 2, 1));
+      [[-3.0, -1.8], [3.0, -1.8], [3.0, 1.8], [-3.0, 1.8]].forEach(function (c) { lines.push(L(ring(c[0], y, c[1], 0.15, 12), 2, 0.8)); });
+    }
+    V.forEach(function (v, n) {                                                // vias run through every layer
+      lines.push(L([[v[0], ys[0], v[1]], [v[0], top, v[1]]], 1));
+      for (k = 0; k < LN; k++) lines.push(L(ring(v[0], ys[k], v[1], 0.16, 12), 1));
+      var u = (((t * 0.3 + n / 3) % 1) + 1) % 1;
+      dots.push([v[0], ys[0] + (top - ys[0]) * u, v[1]]);
     });
-    return { name: 'Geometry', sub: 'B-rep solid, edges and faces', ext: 4.6, ground: null, lines: lines, dots: dots,
-      dim: { a: [-3, Y0, 2.6], b: [3, Y0, 2.6], text: '10 faces' } };
+    lines = lines.concat(box(-1.2, top, -0.9, 0.6, top + 0.45, 0.2, 1));      // IC package
+    for (i = 0; i < 6; i++) lines = lines.concat(box(-2.5 + i * 1.0 - 0.12, top, -1.95, -2.5 + i * 1.0 + 0.12, top + 0.5, -1.7, 0));  // header pins
+    [[2.6, 1.2], [-2.6, 1.3]].forEach(function (c) {                           // capacitors
+      lines.push(L(ring(c[0], top, c[1], 0.22, 16), 0)); lines.push(L(ring(c[0], top + 0.55, c[1], 0.22, 16), 0));
+      [0, 1, 2, 3].forEach(function (q) { var an = q * Math.PI / 2; lines.push(L([[c[0] + 0.22 * Math.cos(an), top, c[1] + 0.22 * Math.sin(an)], [c[0] + 0.22 * Math.cos(an), top + 0.55, c[1] + 0.22 * Math.sin(an)]], 0, 0.7)); });
+    });
+    return { name: 'Geometry', sub: 'PCB stack-up, vias, components', ext: 4.8, ground: null, lines: lines, dots: dots,
+      dim: { a: [-XW, ys[0], ZW + 0.5], b: [XW, ys[0], ZW + 0.5], text: LN + ' layers' } };
   }
 
   function lerp(a, b, u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u]; }
